@@ -294,3 +294,13 @@ Give artificial agents a place in the ontology of the world.
 Status:Conceptual infrastructure proposal. Author:Alexander Lebed
 First public release: 05 Feb 2026.
 Open for discussion, collaboration, and formalization.
+
+---
+
+## Contact
+
+For discussion, critique, or collaboration:
+
+**contact@aiagentid.org**
+
+Initiator: Alexander Lebed
