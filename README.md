@@ -425,10 +425,9 @@ Give artificial agents a place in the ontology of the world.
 
 Author:
 Alexander Lebed
-
-Status:
+First public release: 05 Feb 2026
 Conceptual infrastructure proposal.
 Open for discussion, collaboration, and formalization.
 
- for discussion, collaboration, and formalization.
+ 
 
