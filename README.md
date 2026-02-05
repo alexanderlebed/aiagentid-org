@@ -95,3 +95,5 @@ Alexander Lebed
 
 This repository is currently in the **legitimation phase**.
 Critical review is prioritized over implementation.
+
+See TERMINOLOGY.md for precise language definitions.
