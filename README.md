@@ -92,3 +92,6 @@ Serious engagement is welcome.
 
 **Author:**  
 Alexander Lebed
+
+This repository is currently in the **legitimation phase**.
+Critical review is prioritized over implementation.
