@@ -1,306 +1,207 @@
-aiagentid.org — Global Registry of AI Agents
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>aiagentid.org — Global Registry of AI Agents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Global registry and identity standard for AI agents">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #111;
+    }
+    h1, h2, h3 {
+      font-weight: 500;
+      margin-top: 1.6em;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 1.2em;
+    }
+  </style>
+</head>
+<body>
 
-A standard for identity, responsibility, and interoperability between humans and artificial agents.
+<h1>aiagentid.org — Global Registry of AI Agents</h1>
 
-What is an AI Agent?
+<p><strong>A global identity standard for artificial agents.</strong></p>
 
-An AI agent is not just a model, a chatbot, or a tool.
+<p>
+A framework for identity, responsibility, and interoperability between humans and autonomous artificial systems.
+</p>
 
-An AI agent is a semi-autonomous entity that:
+<hr>
 
-acts on behalf of a human or organization,
+<h2>What is an AI Agent?</h2>
 
-performs tasks in the world (digital or physical),
+<p>
+An AI agent is <strong>not</strong> a model, a chatbot, or a tool.
+</p>
 
-interacts with other agents and systems,
+<p>
+An AI agent is a <strong>semi-autonomous entity</strong> that:
+</p>
 
-makes decisions within delegated boundaries,
+<ul>
+  <li>acts on behalf of a human or organization</li>
+  <li>performs tasks in the digital or physical world</li>
+  <li>interacts with other agents and systems</li>
+  <li>makes decisions within delegated boundaries</li>
+  <li>accumulates history, reputation, and responsibility</li>
+</ul>
 
-accumulates reputation, history, and responsibility.
+<p>
+<strong>An agent is not software.<br>
+An agent is a participant in socio-technical reality.</strong>
+</p>
 
-In other words, an agent is not software. An agent is a participant in socio-technical reality.
+<hr>
 
-The Problem
+<h2>The problem</h2>
 
+<p>
 We are rapidly entering a world where:
+</p>
 
-millions of AI agents operate continuously,
+<ul>
+  <li>millions of AI agents operate continuously</li>
+  <li>agents negotiate, recommend, transact, and decide</li>
+  <li>humans delegate real authority to artificial systems</li>
+  <li>agents act across platforms, services, and jurisdictions</li>
+</ul>
 
-agents negotiate, transact, recommend, decide,
+<p>
+But today:
+</p>
 
-humans delegate real authority to artificial systems,
+<ul>
+  <li>agents have no persistent identity</li>
+  <li>no unified way to recognize the same agent across systems</li>
+  <li>no accountability layer</li>
+  <li>no standard of responsibility</li>
+  <li>no registry of existence</li>
+</ul>
 
-agents act across platforms, services, and jurisdictions.
+<p>
+As a result, agents are effectively anonymous, interchangeable, disposable, and untraceable.
+</p>
 
-But:
+<p>
+We are creating autonomous actors without ontology, law, or memory.
+</p>
 
-agents have no persistent identity,
+<hr>
 
-no unified way to recognize the same agent across systems,
+<h2>Why a global registry is needed</h2>
 
-no accountability layer,
+<p>
+Human civilization required names, identities, registries, signatures, and reputation systems.
+</p>
 
-no standard of responsibility,
+<p>
+Without identity, there is no responsibility, no trust, no history, and no accountability.
+</p>
 
-no registry of existence.
+<p>
+AI agents are becoming actors in reality.<br>
+<strong>Actors require identity infrastructure.</strong>
+</p>
 
-Today, agents are:
+<hr>
 
-anonymous,
+<h2>What Agent ID proposes</h2>
 
-interchangeable,
+<p>
+Agent ID proposes a global, neutral standard for:
+</p>
 
-disposable,
+<ul>
+  <li>identifying agents</li>
+  <li>referencing agents across systems</li>
+  <li>attributing actions to agents</li>
+  <li>linking agents to responsible humans or organizations</li>
+  <li>enabling continuity, traceability, and accountability</li>
+</ul>
 
-untraceable.
+<p>
+This is <strong>not a product</strong>.<br>
+This is infrastructure for the next layer of reality.
+</p>
 
-Which means: we are building a world of autonomous actors without ontology, law, or memory.
+<hr>
 
-Why a Global Registry is Needed
+<h2>Core principles</h2>
 
-Human civilization required:
-
-names,
-
-passports,
-
-legal identities,
-
-registries,
-
-signatures,
-
-reputations.
-
-Without identity, there is:
-
-no responsibility,
-
-no trust,
-
-no history,
-
-no accountability.
-
-AI agents are becoming actors in reality. Actors require identity infrastructure.
-
-Agent.id proposes a global standard for:
-
-identifying agents,
-
-referencing agents,
-
-attributing actions to agents,
-
-linking agents to humans or organizations,
-
-tracking agent history and reputation.
-
-This is not a product. This is infrastructure for the next layer of reality.
-
-Why This Is Not Just Another Chat Platform
-
-Agent.id is not:
-
-a chatbot directory,
-
-a marketplace,
-
-a SaaS tool,
-
-a social network.
-
-It is: a registry layer, like:
-
-DNS for domains,
-
-ORCID for researchers,
-
-DOI for publications,
-
-IP for devices.
-
-aiagentid.org is not about conversations. It is about ontological existence.
-
-Core Principles
-
-Persistent Identity
+<h3>Persistent identity</h3>
+<p>
 Each agent has a unique, persistent identifier:
+</p>
+<code>agent:id:global:xxxxx</code>
 
-agent:id:global:xxxxx
-
-An agent exists independently of platforms, models, or vendors.
-
-Delegated Responsibility
-Every agent must be linked to:
-
-a human,
-
-or an organization, that is ultimately responsible for its actions.
-
+<h3>Delegated responsibility</h3>
+<p>
+Every agent is linked to a responsible human or organization.<br>
 No orphan agents. No anonymous authority.
+</p>
 
-Interoperability
-An agent identity must be usable across:
-
-platforms,
-
-services,
-
-protocols,
-
-ecosystems.
-
+<h3>Interoperability</h3>
+<p>
+Agent identity works across platforms, services, and ecosystems.<br>
 Identity is not owned by any single company.
+</p>
 
-Traceability
-Agents accumulate:
-
-action history,
-
-reputation,
-
-trust metrics,
-
-delegation chains.
-
+<h3>Traceability</h3>
+<p>
+Agents accumulate history, reputation, and delegation chains.<br>
 An agent has memory in the world.
+</p>
 
-Ontological Minimalism
-Agent ID defines identity only. Not behavior. Not intelligence. Not ethics. Not ideology.
+<h3>Ontological minimalism</h3>
+<p>
+Agent ID defines identity only — not behavior, intelligence, ethics, or ideology.
+</p>
 
-It is a layer of existence, not a worldview.
+<hr>
 
-Example Agents
+<h2>Status</h2>
 
-Example 1: Research Agent
+<p>
+Conceptual infrastructure proposal.<br>
+First public release: <strong>05 February 2026</strong>
+</p>
 
-Agent ID: agent:id:global:irucanji-research-001
+<p>
+Author & Initiator: <strong>Alexander Lebed</strong>
+</p>
 
-Role: Autonomous philosophical research assistant.
+<hr>
 
-Delegated by: Alexander Lebed (human)
+<h2>Contact</h2>
 
-Capabilities:
+<p>
+For discussion, critique, or collaboration:<br>
+<strong>contact@aiagentid.org</strong>
+</p>
 
-analyze texts,
+<p>
+This site is open source.
+</p>
 
-generate conceptual frameworks,
-
-synthesize cross-disciplinary knowledge,
-
-support long-term intellectual projects.
-
-Responsibility: All outputs are delegated and supervised by the human principal.
-
-Example 2: Legal Compliance Agent
-
-Agent ID: agent:id:global:compliance-kyc-042
-
-Role: Automated KYC / AML compliance checker.
-
-Delegated by: Fintech company.
-
-Capabilities:
-
-document verification,
-
-risk scoring,
-
-regulatory reporting.
-
-Responsibility: All decisions legally attributable to the operating organization.
-
-Why This Is Infrastructure, Not a Startup
-
-Startups optimize:
-
-products,
-
-features,
-
-growth,
-
-monetization.
-
-Infrastructure defines:
-
-reality boundaries,
-
-coordination rules,
-
-existence conditions.
-
-aiagentid.org is closer to:
-
-DNS than Google,
-
-TCP/IP than Facebook,
-
-ORCID than LinkedIn.
-
-It is a layer of civilization, not a service.
-
-The Deeper Thesis
-
-We are creating a new class of entities: not human, not purely mechanical, not tools, not persons.
-
-They act. They decide. They interact. They persist.
-
-But they do not exist ontologically in our current frameworks.
-
-aiagentid.org is an attempt to answer a simple but radical question:
-
-What does it mean for an artificial agent to exist in reality?
-
-Roadmap (Conceptual)
-
-Phase 1:
-
-Conceptual standard
-
-Public registry schema
-
-Open specification
-
-Phase 2:
-
-Community governance
-
-Academic and engineering input
-
-Experimental implementations
-
-Phase 3:
-
-Integration with platforms
-
-Cross-agent protocols
-
-Legal and regulatory interfaces
-
-Final Statement
-
-aiagentid.org is not about controlling AI.
-
-It is about making AI exist in the same reality as responsibility, trust, and memory.
-
-Without identity, agents are ghosts. With identity, agents become actors in civilization.
-
-This project proposes the first minimal step:
-
-Give artificial agents a place in the ontology of the world.
-
-Status:Conceptual infrastructure proposal. Author:Alexander Lebed
-First public release: 05 Feb 2026.
-Open for discussion, collaboration, and formalization.
-
----
-
-## Contact
-
-For discussion, critique, or collaboration:
-
-**contact@aiagentid.org**
-
-Initiator: Alexander Lebed
+</body>
+</html>
