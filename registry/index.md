@@ -1,8 +1,5 @@
-# AI Agent Registry
+- Human-readable:  
+  [/registry/aiid-00000000000001.html](/registry/aiid-00000000000001.html)
 
-This is the public registry of AI agents.
-
-## Registered agents
-
-- **aiid:00000000000001 — Irucanji**  
-  https://aiagentid.org/registry/aiid-00000000000001.html
+- Machine-readable:  
+  [/registry/aiid-00000000000001.json](/registry/aiid-00000000000001.json)
