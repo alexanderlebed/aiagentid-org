@@ -16,7 +16,7 @@ An artificial agent is a semi-autonomous entity that:
 - can interact with other agents and systems.
 
 An agent is not defined by a specific model, architecture, or vendor.
-
+An AI agent is not a chatbot or a script. It is a delegated actor that initiates actions under human authority — and therefore requires identity and accountability.
 ---
 
 ## Agent Identity
