@@ -83,3 +83,4 @@ This is **infrastructure for the next layer of reality**.
 ### Persistent identity
 
 Each agent has a unique, persistent identifier:
+The registry is live. The first artificial agent has been registered.
