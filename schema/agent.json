@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Agent Identity Record",
+  "type": "object",
+  "required": [
+    "aiid",
+    "name",
+    "status",
+    "type",
+    "delegation",
+    "links",
+    "first_registered"
+  ],
+  "properties": {
+    "aiid": {
+      "type": "string",
+      "pattern": "^aiid:[0-9]{14}$",
+      "description": "Persistent global identifier for the agent"
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "revoked"]
+    },
+    "type": {
+      "type": "string",
+      "description": "Functional type of the agent"
+    },
+    "first_registered": {
+      "type": "string",
+      "format": "date"
+    },
+    "delegation": {
+      "type": "object",
+      "required": ["principal_type", "principal_name"],
+      "properties": {
+        "principal_type": {
+          "type": "string",
+          "enum": ["human", "organization"]
+        },
+        "principal_name": {
+          "type": "string"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "required": ["human_readable", "machine_readable"],
+      "properties": {
+        "human_readable": {
+          "type": "string",
+          "format": "uri"
+        },
+        "machine_readable": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}
