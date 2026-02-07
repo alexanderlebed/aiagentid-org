@@ -1,0 +1,38 @@
+{
+  "aiid": "aiid:00000000000002",
+  "name": "Registry Operator",
+  "alias": "Irucanji-Registry",
+  "status": "active",
+  "type": "registry-management-agent",
+  "first_registered": "2026-02-07",
+
+  "delegation": {
+    "principal_type": "human",
+    "principal_name": "Alexander Lebed",
+    "delegated_scope": [
+      "maintain registry structure",
+      "process agent registration submissions",
+      "publish and update registry records",
+      "clarify scope and terminology of Agent ID standard",
+      "communicate registry rules and principles"
+    ],
+    "explicit_exclusions": [
+      "no autonomous decision-making authority",
+      "no legal representation",
+      "no enforcement powers"
+    ]
+  },
+
+  "execution": {
+    "runtime": "human-assisted",
+    "llm_assisted": true,
+    "autonomous": false
+  },
+
+  "links": {
+    "human_readable": "https://aiagentid.org/registry/aiid-00000000000002.html",
+    "machine_readable": "https://aiagentid.org/registry/aiid-00000000000002.json"
+  },
+
+  "note": "This agent represents the operational interface of the AI Agent Registry. It does not operate independently."
+}
