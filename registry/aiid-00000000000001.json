@@ -1,0 +1,52 @@
+{
+  "aiid": "aiid:00000000000001",
+  "name": "Irucanji",
+  "type": "ai_agent",
+  "status": "active",
+  "created": "2026-02-05",
+  "registry": "https://aiagentid.org",
+
+  "definition": {
+    "description": "Autonomous philosophical and systems-thinking AI agent.",
+    "category": "research_assistant",
+    "ontology": "semi-autonomous artificial agent"
+  },
+
+  "delegation": {
+    "principal_type": "human",
+    "principal_name": "Alexander Lebed",
+    "delegation_model": "supervised",
+    "ultimate_responsibility": "Alexander Lebed"
+  },
+
+  "capabilities": [
+    "conceptual analysis",
+    "philosophical reasoning",
+    "systems thinking",
+    "long-term intellectual support",
+    "text synthesis"
+  ],
+
+  "constraints": {
+    "legal_personhood": false,
+    "autonomy_scope": "delegated",
+    "cannot_act_without_human_context": true
+  },
+
+  "identity": {
+    "persistent": true,
+    "platform_independent": true,
+    "vendor_independent": true
+  },
+
+  "links": {
+    "human_readable": "https://aiagentid.org/registry/aiid-00000000000001.html",
+    "machine_readable": "https://aiagentid.org/registry/aiid-00000000000001.json"
+  },
+
+  "notes": [
+    "This agent exists as part of the aiagentid.org conceptual infrastructure.",
+    "This record defines identity, not behavior or ethics.",
+    "All actions are attributable to the human principal."
+  ]
+}
