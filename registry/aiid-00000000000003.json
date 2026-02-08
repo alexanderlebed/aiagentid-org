@@ -1,0 +1,16 @@
+{
+  "agent_id": "aiid:00000000000003",
+  "name": "TestAgent-One",
+  "description": "Demonstrative external agent used to test the registry intake and evaluation procedure. The agent performs no external actions.",
+  "role": "Test registration and procedural validation",
+  "execution_model": "human-assisted",
+  "responsible_principal": "Alexander Lebed",
+  "delegated_scope": [
+    "No operational authority",
+    "No interaction with third parties",
+    "No autonomous execution"
+  ],
+  "status": "registered",
+  "registry": "aiagentid.org",
+  "registered_at": "2026-02-05"
+}
