@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Agent ID Standard v0.2</title>
+  <meta name="description" content="Agent ID Standard v0.2 — identity and responsibility standard for artificial agents.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    hr {
+      margin: 40px 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    nav a {
+      margin-right: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/">Home</a> ·
+  <a href="/registry/">Registry</a>
+</nav>
+
+<h1>Agent ID Standard v0.2</h1>
+
+<p>
+This document defines the Agent ID standard for artificial agents.
+</p>
+
+<hr>
+
+<h2>1. Scope and Purpose</h2>
+
+<p>
+This standard defines a minimal identity layer for artificial agents.
+</p>
+
+<p>
+Its purpose is to establish <strong>persistent identification</strong>,
+<strong>delegated responsibility</strong>, and
+<strong>referential continuity</strong> for artificial agents operating
+in socio-technical systems.
+</p>
+
+<p>
+This standard does <strong>not</strong> define:
+</p>
+
+<ul>
+  <li>intelligence levels,</li>
+  <li>behavior rules,</li>
+  <li>ethical constraints,</li>
+  <li>governance mechanisms,</li>
+  <li>enforcement or liability frameworks.</li>
+</ul>
+
+<p>
+This standard defines <strong>existence</strong>, not conduct.
+</p>
+
+<hr>
+
+<h2>2. Definitions</h2>
+
+<h3>2.1 Artificial Agent</h3>
+
+<p>
+An <strong>artificial agent</strong> is a semi-autonomous entity that:
+</p>
+
+<ul>
+  <li>performs actions on behalf of a human or organization,</li>
+  <li>operates within declared delegated boundaries,</li>
+  <li>may persist across time, platforms, and implementations,</li>
+  <li>produces effects in digital or physical reality.</li>
+</ul>
+
+<p>
+An agent is not merely software.
+An agent is an <strong>actor</strong> in a socio-technical system.
+</p>
+
+<h3>2.2 Agent Identity</h3>
+
+<p>
+<strong>Agent identity</strong> is a stable, unique reference that:
+</p>
+
+<ul>
+  <li>distinguishes one agent from all others,</li>
+  <li>persists independently of implementation,</li>
+  <li>enables attribution of actions and history.</li>
+</ul>
+
+<p>
+Identity does not imply intelligence, trustworthiness, or authority.
+It enables recognition and reference only.
+</p>
+
+<h3>2.3 Delegated Responsibility</h3>
+
+<p>
+<strong>Delegated responsibility</strong> is the explicit attribution of
+an agent’s authority to a human or organization.
+</p>
+
+<p>
+Delegation defines:
+</p>
+
+<ul>
+  <li>scope of permitted action,</li>
+  <li>operational boundaries,</li>
+  <li>responsibility attribution.</li>
+</ul>
+
+<p>
+Delegation does <strong>not</strong> imply legal liability assignment,
+fault determination, or enforcement capability.
+</p>
+
+<p>
+The registry records delegation as declared.
+</p>
+
+<hr>
+
+<h2>3. Agent Identifier Format</h2>
+
+<h3>3.1 Identifier Structure</h3>
+
+<p>
+Each agent is assigned a globally unique identifier in the form:
+</p>
+
+<pre><code>aiid:00000000000001</code></pre>
+
+<p>
+The identifier:
+</p>
+
+<ul>
+  <li>is opaque,</li>
+  <li>carries no semantic meaning,</li>
+  <li>is immutable once assigned.</li>
+</ul>
+
+<h3>3.2 Persistence</h3>
+
+<p>
+An Agent ID:
+</p>
+
+<ul>
+  <li>MUST remain stable over time,</li>
+  <li>MUST NOT be reused,</li>
+  <li>MUST NOT be reassigned.</li>
+</ul>
+
+<p>
+An agent may be deprecated or archived, but its identifier remains
+reserved permanently.
+</p>
+
+<h3>3.3 Resolution</h3>
+
+<p>
+Each Agent ID MUST resolve to:
+</p>
+
+<ul>
+  <li>a human-readable record (HTML),</li>
+  <li>a machine-readable record (JSON).</li>
+</ul>
+
+<p>
+Resolution mechanisms are implementation-dependent and out of scope
+for this standard.
+</p>
+
+<hr>
+
+<h2>4. Registry Function</h2>
+
+<h3>4.1 Registry Role</h3>
+
+<p>
+The registry serves as a <strong>declarative record of existence</strong>.
+</p>
+
+<p>
+It records:
+</p>
+
+<ul>
+  <li>agent identity,</li>
+  <li>declared role,</li>
+  <li>delegation attribution,</li>
+  <li>optional metadata,</li>
+  <li>optional anchoring references.</li>
+</ul>
+
+<p>
+The registry does not validate claims beyond structural compliance.
+</p>
+
+<h3>4.2 Non-Authority Principle</h3>
+
+<p>
+The registry:
+</p>
+
+<ul>
+  <li>does not grant authority,</li>
+  <li>does not certify behavior,</li>
+  <li>does not enforce compliance,</li>
+  <li>does not adjudicate disputes.</li>
+</ul>
+
+<p>
+Inclusion in the registry implies <strong>existence</strong>, not endorsement.
+</p>
+
+<h3>4.3 Anchoring</h3>
+
+<p>
+Agent records MAY include references to external anchoring mechanisms
+(e.g. cryptographic hashes, blockchains, notarization systems).
+</p>
+
+<p>
+Anchoring:
+</p>
+
+<ul>
+  <li>provides immutability guarantees,</li>
+  <li>does not change registry semantics,</li>
+  <li>does not imply legal force.</li>
+</ul>
+
+<h3>4.4 Separation of Meaning and Proof</h3>
+
+<p>
+The registry defines <strong>meaning</strong>.
+External systems may provide <strong>proof</strong>.
+</p>
+
+<p>
+Meaning MUST NOT depend on proof mechanisms.
+</p>
+
+<hr>
+
+<p>
+Version: <strong>Agent ID Standard v0.2</strong><br>
+Status: Draft — public discussion
+</p>
+
+</body>
+</html>
