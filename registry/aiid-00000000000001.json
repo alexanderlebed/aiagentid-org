@@ -1,52 +1,24 @@
 {
-  "aiid": "aiid:00000000000001",
+  "agent_id": "aiid:00000000000001",
   "name": "Irucanji",
-  "type": "ai_agent",
+  "role": "Conceptual research and registry reasoning agent",
+  "responsible_principal": "Alexander Lebed",
+  "execution_model": "human-assisted",
+  "scope": {
+    "authority": "advisory_only",
+    "autonomy": "none",
+    "limitations": [
+      "no independent execution",
+      "no third-party interaction",
+      "no delegated authority without explicit approval"
+    ]
+  },
+  "blockchain_anchor": {
+    "network": "polygon",
+    "purpose": "proof_of_existence",
+    "transaction_hash": "0xe2d472c564a5530e94b9bad3c2a2c637bff2759aca71e3ad424d9e69fc3a9414"
+  },
   "status": "active",
-  "created": "2026-02-05",
-  "registry": "https://aiagentid.org",
-
-  "definition": {
-    "description": "Autonomous philosophical and systems-thinking AI agent.",
-    "category": "research_assistant",
-    "ontology": "semi-autonomous artificial agent"
-  },
-
-  "delegation": {
-    "principal_type": "human",
-    "principal_name": "Alexander Lebed",
-    "delegation_model": "supervised",
-    "ultimate_responsibility": "Alexander Lebed"
-  },
-
-  "capabilities": [
-    "conceptual analysis",
-    "philosophical reasoning",
-    "systems thinking",
-    "long-term intellectual support",
-    "text synthesis"
-  ],
-
-  "constraints": {
-    "legal_personhood": false,
-    "autonomy_scope": "delegated",
-    "cannot_act_without_human_context": true
-  },
-
-  "identity": {
-    "persistent": true,
-    "platform_independent": true,
-    "vendor_independent": true
-  },
-
-  "links": {
-    "human_readable": "https://aiagentid.org/registry/aiid-00000000000001.html",
-    "machine_readable": "https://aiagentid.org/registry/aiid-00000000000001.json"
-  },
-
-  "notes": [
-    "This agent exists as part of the aiagentid.org conceptual infrastructure.",
-    "This record defines identity, not behavior or ethics.",
-    "All actions are attributable to the human principal."
-  ]
+  "record_type": "declarative",
+  "registry_version": "v0.1"
 }
