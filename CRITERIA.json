@@ -1,7 +1,14 @@
 {
-  "agent_id": "string",
+  "agent_id": "aiid:XXXXXXXXXXXXXX",
   "name": "string",
   "responsible_principal": "string",
-  "execution_model": ["human-assisted", "automated"],
-  "declared_scope": "string"
+
+  "execution_model": "advisory-only | human-assisted | autonomous",
+
+  "declared_scope": {
+    "description": "string",
+    "limitations": ["string"]
+  },
+
+  "non_authority_clause": true
 }
