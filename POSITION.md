@@ -52,7 +52,16 @@ This layer is meant to be neutral infrastructure,
 not a normative system.
 This layer answers only one question: “what exists?”, not “what should exist?”
 ---
+This proposal is intentionally difficult to monetize early.
 
+Its value emerges only when:
+- multiple independent agents exist,
+- delegation becomes routine,
+- responsibility boundaries matter,
+- and interoperability becomes unavoidable.
+
+This is infrastructure work.
+Its payoff follows adoption, not promotion.
 ## Current Status
 
 - Public domain and specification published
