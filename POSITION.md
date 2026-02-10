@@ -73,7 +73,7 @@ but for:
 
 The goal is to allow the work to proceed
 without being forced into premature commercialization.
-Current standard version: Agent ID v0.1
+Current standard version: Agent ID v0.2
 ---
 
 ## Author
