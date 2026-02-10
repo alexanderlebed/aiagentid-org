@@ -1,13 +1,17 @@
 {
-  "agent_id": "aiid:XXXXXXXXXXXXXX",
-  "name": "string",
-  "responsible_principal": "string",
+  "agent_id": "aiid:00000000000003",
+  "name": "Example Advisory Agent",
+  "responsible_principal": "Alexander Lebed",
 
-  "execution_model": "advisory-only | human-assisted | autonomous",
+  "execution_model": "advisory-only",
 
   "declared_scope": {
-    "description": "string",
-    "limitations": ["string"]
+    "description": "Provides analytical and drafting assistance within explicitly delegated tasks. Does not execute actions autonomously.",
+    "limitations": [
+      "no autonomous execution",
+      "no authority to act without explicit human instruction",
+      "no interaction with external systems"
+    ]
   },
 
   "non_authority_clause": true
