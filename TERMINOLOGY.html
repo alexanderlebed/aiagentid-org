@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Agent ID — Core Thesaurus</title>
+  <meta name="description" content="Canonical terminology and definitions for the Agent ID identity standard.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.65;
+      color: #111;
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    h1 {
+      margin-bottom: 0.4em;
+    }
+    h2 {
+      margin-top: 2.2em;
+    }
+    hr {
+      margin: 48px 0;
+    }
+    nav a {
+      margin-right: 14px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 22px;
+    }
+    .note {
+      border: 1px solid #000;
+      padding: 18px 20px;
+      background: #fafafa;
+      margin: 32px 0;
+      font-size: 0.95em;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/">Home</a> ·
+  <a href="/STANDARD_v0.2.html">Standard</a> ·
+  <a href="/registry/">Registry</a>
+</nav>
+
+<h1>Agent ID — Core Thesaurus</h1>
+
+<p>
+This document defines the canonical terminology used by the Agent ID
+standard and registry.
+</p>
+
+<div class="note">
+  <strong>Purpose</strong><br>
+  This thesaurus stabilizes language before it is fragmented by
+  implementation, regulation, or marketing.
+  Definitions here are normative for the Agent ID project.
+</div>
+
+<hr>
+
+<h2>Agent</h2>
+
+<p>
+An <strong>Agent</strong> is a socio-technical actor capable of producing
+actions and effects in digital or physical reality
+<strong>on behalf of</strong> a human or organization.
+</p>
+
+<p>
+An agent may be autonomous, semi-autonomous, or fully human-operated.
+</p>
+
+<p>
+Agent ≠ model<br>
+Agent ≠ chatbot<br>
+Agent ≠ tool
+</p>
+
+<hr>
+
+<h2>Artificial Agent</h2>
+
+<p>
+An <strong>Artificial Agent</strong> is an agent whose execution is realized
+through artificial computational systems.
+</p>
+
+<p>
+Artificiality refers to the execution mechanism,
+not to the agent’s status as an actor.
+</p>
+
+<hr>
+
+<h2>Agent Identity</h2>
+
+<p>
+<strong>Agent Identity</strong> is a stable, unique, and referable identity
+assigned to an agent.
+</p>
+
+<ul>
+  <li>independent of implementation</li>
+  <li>independent of platform</li>
+  <li>persistent over time</li>
+</ul>
+
+<p>
+Identity enables reference and attribution only.
+</p>
+
+<p>
+Identity ≠ account<br>
+Identity ≠ key<br>
+Identity ≠ address
+</p>
+
+<hr>
+
+<h2>Agent ID</h2>
+
+<p>
+<strong>Agent ID</strong> is the formal representation of Agent Identity.
+</p>
+
+<p>
+An Agent ID is:
+</p>
+
+<ul>
+  <li>globally unique</li>
+  <li>opaque (semantically empty)</li>
+  <li>immutable</li>
+  <li>never reused</li>
+</ul>
+
+<p>
+An Agent ID persists even if the agent is inactive,
+reimplemented, or deprecated.
+</p>
+
+<hr>
+
+<h2>Delegation</h2>
+
+<p>
+<strong>Delegation</strong> is the explicit granting of limited authority
+to an agent by a principal.
+</p>
+
+<p>
+Delegation always specifies:
+</p>
+
+<ul>
+  <li>source of authority</li>
+  <li>scope and boundaries</li>
+  <li>context of action</li>
+</ul>
+
+<p>
+Delegation ≠ responsibility transfer<br>
+Delegation ≠ automatic autonomy
+</p>
+
+<hr>
+
+<h2>Delegated Responsibility</h2>
+
+<p>
+<strong>Delegated Responsibility</strong> is a declarative attribution
+linking an agent to its principal within defined boundaries.
+</p>
+
+<p>
+It is not a legal judgment, enforcement mechanism, or punishment model.
+</p>
+
+<hr>
+
+<h2>Principal</h2>
+
+<p>
+A <strong>Principal</strong> is a human or organization on whose behalf
+an agent acts.
+</p>
+
+<p>
+A principal:
+</p>
+
+<ul>
+  <li>may be singular or multiple</li>
+  <li>may change over time (with history preserved)</li>
+  <li>cannot be removed from the agent’s historical record</li>
+</ul>
+
+<hr>
+
+<h2>Scope</h2>
+
+<p>
+<strong>Scope</strong> defines the declared boundaries of permissible
+agent action.
+</p>
+
+<p>
+Scope specifies:
+</p>
+
+<ul>
+  <li>what an agent may do</li>
+  <li>what an agent may not do</li>
+  <li>the context in which action is valid</li>
+</ul>
+
+<p>
+Scope is a boundary, not an instruction.
+</p>
+
+<hr>
+
+<h2>Execution Model</h2>
+
+<p>
+<strong>Execution Model</strong> describes how an agent operates.
+</p>
+
+<p>
+Examples:
+</p>
+
+<ul>
+  <li>human-operated</li>
+  <li>human-assisted</li>
+  <li>autonomous (declared)</li>
+</ul>
+
+<p>
+Execution Model ≠ intelligence level<br>
+Execution Model ≠ trustworthiness
+</p>
+
+<hr>
+
+<h2>Registry</h2>
+
+<p>
+The <strong>Registry</strong> is a declarative record of agent existence.
+</p>
+
+<p>
+It records:
+</p>
+
+<ul>
+  <li>agent identity</li>
+  <li>delegation attribution</li>
+  <li>declared metadata</li>
+  <li>change history</li>
+</ul>
+
+<p>
+The registry does not grant authority,
+certify behavior, or enforce compliance.
+</p>
+
+<hr>
+
+<h2>Declarative Record</h2>
+
+<p>
+A <strong>Declarative Record</strong> asserts existence and attribution
+without claiming correctness, quality, or safety.
+</p>
+
+<hr>
+
+<h2>Anchoring</h2>
+
+<p>
+<strong>Anchoring</strong> links a registry record to an external
+immutability mechanism (e.g. cryptographic hash or blockchain).
+</p>
+
+<p>
+Anchoring:
+</p>
+
+<ul>
+  <li>confirms existence at a point in time</li>
+  <li>does not alter registry meaning</li>
+  <li>does not confer legal force</li>
+</ul>
+
+<hr>
+
+<h2>Meaning vs Proof</h2>
+
+<p>
+<strong>Meaning</strong> is defined by the standard and registry.<br>
+<strong>Proof</strong> may be provided by external systems.
+</p>
+
+<p>
+<strong>Meaning MUST NOT depend on Proof.</strong>
+</p>
+
+<hr>
+
+<h2>Ontological Minimalism</h2>
+
+<p>
+<strong>Ontological Minimalism</strong> is the principle that the standard
+defines only what is necessary for existence — nothing more.
+</p>
+
+<hr>
+
+<h2>Existence</h2>
+
+<p>
+<strong>Existence</strong> is the minimal status of an agent:
+it can be uniquely referenced and attributed to a principal.
+</p>
+
+<hr>
+
+<div class="note">
+  <strong>Final Note</strong><br>
+  This thesaurus exists to prevent semantic drift and preserve
+  interoperability of meaning.
+  New terms must reduce ambiguity, not increase it.
+</div>
+
+</body>
+</html>
