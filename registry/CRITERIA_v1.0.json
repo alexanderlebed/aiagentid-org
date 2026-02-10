@@ -1,6 +1,6 @@
-"$comment": "This schema is frozen as Registry Admission Criteria v1.0. Any modification requires a new version."
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+
   "$comment": "This schema is frozen as Registry Admission Criteria v1.0. Any modification requires a new version.",
 
   "title": "Agent ID Registry Admission Criteria v1.0",
