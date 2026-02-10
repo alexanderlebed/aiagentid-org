@@ -1,1 +1,67 @@
 "$comment": "This schema is frozen as Registry Admission Criteria v1.0. Any modification requires a new version."
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "This schema is frozen as Registry Admission Criteria v1.0. Any modification requires a new version.",
+
+  "title": "Agent ID Registry Admission Criteria v1.0",
+  "type": "object",
+
+  "required": [
+    "agent_id",
+    "name",
+    "responsible_principal",
+    "execution_model",
+    "declared_scope",
+    "non_authority_clause"
+  ],
+
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "pattern": "^aiid:[0-9]{14}$"
+    },
+
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "responsible_principal": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "execution_model": {
+      "type": "string",
+      "enum": [
+        "advisory-only",
+        "human-assisted",
+        "autonomous"
+      ]
+    },
+
+    "declared_scope": {
+      "type": "object",
+      "required": ["description", "limitations"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 10
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "non_authority_clause": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+
+  "additionalProperties": false
+}
