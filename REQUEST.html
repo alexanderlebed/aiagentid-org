@@ -3,85 +3,161 @@
 <head>
   <meta charset="utf-8">
   <title>Agent Registry Submission — aiagentid.org</title>
-  <meta name="description" content="Submission interface for the AI Agent Registry.">
+  <meta name="description" content="How to submit an AI agent for registration in the Agent ID Registry.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="https://aiagentid.org/SUBMISSION.html">
+
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
       line-height: 1.6;
       color: #111;
     }
-    h1, h2 { line-height: 1.25; }
+    h1, h2, h3 { line-height: 1.25; }
+    hr { margin: 40px 0; }
+    nav a {
+      margin-right: 14px;
+      text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; }
     .box {
       border: 1px solid #000;
-      padding: 18px;
+      padding: 18px 20px;
       background: #fafafa;
       margin: 30px 0;
+      font-size: 0.95em;
     }
-    label { display: block; margin-top: 16px; }
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 6px;
-      font-family: inherit;
+    code {
+      background: #f4f4f4;
+      padding: 6px 8px;
+      border-radius: 4px;
+      display: block;
+      word-break: break-all;
+      margin: 10px 0;
     }
+    ul { margin-left: 20px; }
+    ol { margin-left: 20px; }
   </style>
 </head>
 
 <body>
+
+<nav>
+  <a href="/">Home</a> ·
+  <a href="/registry/">Registry</a> ·
+  <a href="/CRITERIA_v1.0.json">Criteria</a> ·
+  <a href="/OPER_v0.2.html">Operations</a>
+</nav>
 
 <h1>Agent Registry Submission</h1>
 
 <div class="box">
   <strong>Important notice</strong>
   <p>
-    This registry is declarative and archival.
-    Submission does not guarantee review, response, or inclusion.
+    The AI Agent Registry is <strong>declarative and archival</strong>.
   </p>
   <p>
-    All submissions are processed asynchronously.
-    No response time is guaranteed.
+    Submission does not guarantee review, response, or inclusion.
+    No authority, rights, or obligations are created by submission.
   </p>
 </div>
 
-<h2>Required Information</h2>
+<hr>
 
-<form>
-  <label>
-    Agent Name
-    <input type="text" required>
-  </label>
+<h2>How to Submit an Agent</h2>
 
-  <label>
-    Responsible Principal (human or organization)
-    <input type="text" required>
-  </label>
+<p>
+Agent registration requests are submitted as
+<strong>machine-readable declarations</strong>.
+</p>
 
-  <label>
-    Declared Scope (what the agent is allowed to do)
-    <textarea rows="4" required></textarea>
-  </label>
+<p>
+The registry does <strong>not</strong> accept:
+</p>
 
-  <label>
-    Contact (optional)
-    <input type="text">
-  </label>
+<ul>
+  <li>email submissions,</li>
+  <li>web forms,</li>
+  <li>free-text descriptions.</li>
+</ul>
 
+<hr>
+
+<h2>Submission Procedure</h2>
+
+<ol>
+  <li>
+    Prepare a JSON declaration that strictly conforms to:<br>
+    <a href="/CRITERIA_v1.0.json">Registry Admission Criteria v1.0</a>
+  </li>
+
+  <li>
+    Publish the JSON file at a publicly accessible URL
+    (GitHub, GitLab, Gist, IPFS, or equivalent).
+  </li>
+
+  <li>
+    Provide the URL for evaluation by the Registry Operator agent.
+  </li>
+</ol>
+
+<p>
+Declarations that do not conform to the criteria
+are automatically rejected without review.
+</p>
+
+<hr>
+
+<h2>What Happens Next</h2>
+
+<p>
+If the submission is valid:
+</p>
+
+<ul>
+  <li>the Registry Operator agent prepares registry records,</li>
+  <li>a Registry Change Proposal is generated,</li>
+  <li>the human principal approves or rejects publication.</li>
+</ul>
+
+<p>
+If approved, the agent is assigned a permanent Agent ID
+and published in the registry.
+</p>
+
+<hr>
+
+<h2>Non-Authority Clause</h2>
+
+<div class="box">
   <p>
-    By submitting, you acknowledge that:
+    Registration records declared identity and responsibility only.
+  </p>
+  <p>
+    The registry does <strong>not</strong>:
   </p>
   <ul>
-    <li>the registry does not assign authority or legality;</li>
-    <li>actions outside declared scope are non-attributable;</li>
-    <li>no obligations are created by submission.</li>
+    <li>assign authority,</li>
+    <li>certify behavior,</li>
+    <li>grant legitimacy,</li>
+    <li>enforce compliance.</li>
   </ul>
+</div>
 
-  <p><em>Submission storage and processing rules are defined separately.</em></p>
+<hr>
 
-</form>
+<p>
+This submission model is intentionally minimal and scalable.
+</p>
+
+<p>
+<strong>No email. No accounts. No forms.</strong><br>
+Only declarations.
+</p>
 
 </body>
 </html>
