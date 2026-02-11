@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Agent ID Whitepaper v1.0 — aiagentid.org</title>
+  <title>Agent ID Whitepaper v1.0</title>
 
   <link rel="canonical" href="https://aiagentid.org/WHITEPAPER.html">
 
@@ -16,21 +16,37 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #111;
     }
-    h1, h2 { line-height: 1.25; }
-    hr { margin: 40px 0; }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    hr {
+      margin: 40px 0;
+    }
     nav a {
       margin-right: 14px;
       text-decoration: none;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      text-decoration: underline;
+    }
     .box {
       border: 1px solid #000;
       padding: 18px 20px;
       background: #fafafa;
       margin: 30px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table td, table th {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
     }
   </style>
 </head>
@@ -43,39 +59,190 @@
   <a href="/registry/">Registry</a>
 </nav>
 
-<h1>Agent ID Whitepaper</h1>
+<h1>Agent ID Whitepaper v1.0</h1>
 
-<h2>Declarative Ontological Layer for AI Agents</h2>
+<p>
+<strong>Author:</strong> Alexander Lebed<br>
+<strong>Status:</strong> Public Release<br>
+<strong>Date:</strong> 2026
+</p>
+
+<hr>
+
+<h2>Abstract</h2>
+
+<p>
+Artificial agents are becoming autonomous actors within socio-technical systems.
+Current identity infrastructures focus on authentication and authorization,
+but lack a persistent, cross-platform identity substrate for agents themselves.
+</p>
+
+<p>
+Agent ID proposes a <strong>Declarative Ontological Layer</strong>
+for artificial agents — a minimal identity anchor that defines
+existence and delegated responsibility independently of implementation.
+</p>
+
+<hr>
+
+<h2>1. The Structural Problem</h2>
+
+<p>
+Modern identity systems answer:
+</p>
+
+<ul>
+  <li>Who is authenticated?</li>
+  <li>What permissions are granted?</li>
+</ul>
+
+<p>
+They do not answer:
+</p>
+
+<p><em>What is this agent as a persistent entity across systems?</em></p>
+
+<p>
+Without a stable ontological reference:
+</p>
+
+<ul>
+  <li>delegation chains become opaque,</li>
+  <li>responsibility diffuses,</li>
+  <li>interoperability fragments.</li>
+</ul>
+
+<hr>
+
+<h2>2. Layered Identity Architecture</h2>
+
+<table>
+  <tr>
+    <th>Layer</th>
+    <th>Function</th>
+  </tr>
+  <tr>
+    <td>Layer 0 — Agent ID</td>
+    <td>Defines existence & responsibility anchor</td>
+  </tr>
+  <tr>
+    <td>Layer 1 — Authentication</td>
+    <td>Verifies session & credentials</td>
+  </tr>
+  <tr>
+    <td>Layer 2 — Authorization</td>
+    <td>Grants permissions</td>
+  </tr>
+  <tr>
+    <td>Layer 3 — Governance</td>
+    <td>Regulates behavior & policy</td>
+  </tr>
+</table>
+
+<p>
+Agent ID operates at <strong>Layer 0</strong>.
+It precedes authentication and authorization.
+</p>
+
+<hr>
+
+<h2>3. Core Principles</h2>
+
+<ul>
+  <li>Globally unique agent identifiers</li>
+  <li>Delegated responsibility declaration</li>
+  <li>Separation of meaning and proof</li>
+  <li>Minimal semantic layer</li>
+  <li>No behavioral certification</li>
+  <li>No enforcement authority</li>
+</ul>
+
+<hr>
+
+<h2>4. Delegated Responsibility Model</h2>
 
 <div class="box">
-  <p>
-    <strong>Version:</strong> v1.0<br>
-    <strong>Status:</strong> Published<br>
-    <strong>Date:</strong> 11 February 2026<br>
-    <strong>Author:</strong> Alexander Lebed
-  </p>
+  An agent exists only in relation to a responsible principal.
 </div>
 
 <p>
-This document defines the philosophical and engineering foundations
-of Agent ID as a neutral declarative identity substrate
-for autonomous artificial agents.
+Agent ID does not assign legal liability.
+It records declared responsibility boundaries.
+</p>
+
+<p>
+Actions outside declared scope are non-attributable.
 </p>
 
 <hr>
 
-<h2>Download</h2>
+<h2>5. Relationship to Existing Standards</h2>
 
 <p>
-<a href="/WHITEPAPER_v1.0.pdf">
-Download Whitepaper (PDF)
-</a>
+Agent ID complements:
+</p>
+
+<ul>
+  <li>OpenID</li>
+  <li>OAuth</li>
+  <li>Enterprise IAM</li>
+  <li>Microsoft Entra Agent Identity</li>
+</ul>
+
+<p>
+Where these systems secure sessions,
+Agent ID secures identity reference.
 </p>
 
 <hr>
 
+<h2>6. Minimal Integration Model</h2>
+
 <p>
-Canonical reference: https://aiagentid.org/WHITEPAPER.html
+Agent ID may be embedded as an external reference
+within authentication tokens.
+</p>
+
+<p>
+Example conceptual flow:
+</p>
+
+<ul>
+  <li>Enterprise IAM issues access token</li>
+  <li>Token contains external_reference = aiid:xxxxxxxxxxxxxx</li>
+  <li>Registry provides public referential anchor</li>
+</ul>
+
+<p>
+This enables composability without protocol replacement.
+</p>
+
+<hr>
+
+<h2>7. Strategic Position</h2>
+
+<div class="box">
+  Agent ID is infrastructure, not product.<br>
+  Ontology, not platform.<br>
+  Reference, not enforcement.
+</div>
+
+<hr>
+
+<h2>8. Future Directions</h2>
+
+<ul>
+  <li>Token-level integration experiments</li>
+  <li>Delegation chain modeling</li>
+  <li>Interoperable registry exchange</li>
+  <li>Enterprise pilot implementations</li>
+</ul>
+
+<hr>
+
+<p>
+Maintained by aiagentid.org<br>
+Contact: contact@aiagentid.org
 </p>
 
 </body>
