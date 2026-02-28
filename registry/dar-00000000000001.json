@@ -1,0 +1,48 @@
+{
+  "dar_id": "dar:00000000000001",
+
+  "core": {
+    "created_at": "2026-02-06T00:00:00Z",
+
+    "principals": [
+      {
+        "principal_id": "principal:alexander-lebed",
+        "type": "human",
+        "name": "Alexander Lebed"
+      }
+    ],
+
+    "systems": [
+      {
+        "system_id": "system:irucanji",
+        "type": "ai_system",
+        "name": "Irucanji"
+      }
+    ]
+  },
+
+  "authority_state": {
+    "status": "active",
+
+    "scope": {
+      "description": "Conceptual development, structural modeling, and drafting of AI Agent ID standard",
+      "permissions": [
+        "draft_documents",
+        "propose_registry_changes",
+        "define_structural_models"
+      ]
+    },
+
+    "conditions": {
+      "human_principal_retains_final_authority": true,
+      "registry_changes_require_human_commit": true
+    },
+
+    "state_timestamp": "2026-02-06T00:00:00Z"
+  },
+
+  "registry": {
+    "registered_at": "2026-02-06T00:00:00Z",
+    "registry_operator": "aiagentid.org"
+  }
+}
