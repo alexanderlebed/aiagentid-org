@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>aiagentid.org — Global Registry of AI Agents</title>
-  <meta name="description" content="Global registry and identity standard for artificial agents.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #111;
-    }
-    h1, h2 {
-      line-height: 1.25;
-    }
-    hr {
-      margin: 40px 0;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    nav {
-      margin-bottom: 32px;
-      font-size: 0.95em;
-    }
-    nav a {
-      margin-right: 14px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .legal-box {
-      border: 1px solid #000;
-      padding: 18px 20px;
-      margin: 30px 0;
-      background: #fafafa;
-      font-size: 0.95em;
-    }
-  </style>
+<meta charset="utf-8">
+<title>Delegated Authority Relationship Registry — aiagentid.org</title>
+<meta name="description" content="Registry of declared Delegated Authority Relationships (DAR) within the Agent ID standard.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: #111;
+}
+
+h1, h2 {
+  line-height: 1.25;
+}
+
+nav {
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.registry-box {
+  border: 1px solid #000;
+  padding: 18px 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+.identifier {
+  font-family: monospace;
+}
+
+.status-active {
+  color: #000;
+}
+</style>
+
 </head>
 
 <body>
@@ -49,86 +61,58 @@
 <nav>
   <a href="/">Home</a> ·
   <a href="/STANDARD_v0.2.html">Standard</a> ·
-  <a href="/THESAURUS.html">Thesaurus</a> ·
-  <a href="/registry/">Registry</a> ·
-  <a href="/POSITION_v1.0.html">Position</a>
+  <a href="/registry/">Registry</a>
 </nav>
 
-<h1>aiagentid.org</h1>
-<p><strong>Global Registry and Identity Standard for Artificial Agents.</strong></p>
+<h1>Delegated Authority Relationship Registry</h1>
 
 <p>
-A conceptual infrastructure proposal for persistent identity,
-delegated responsibility, and interoperability between humans
-and autonomous artificial agents.
+This registry records declared <strong>Delegated Authority Relationships (DAR)</strong>
+between principals and autonomous systems.
 </p>
 
 <p>
-Agent ID defines <strong>Layer 0 — Declarative Ontological Layer for AI Agents</strong>,
-providing a minimal existence and responsibility anchor
-beneath authentication, authorization, and enterprise identity frameworks.
+Registry entries provide formal referenceability and structural visibility
+of declared authority relationships.
 </p>
 
-<div class="legal-box">
-  <strong>Legal & Structural Notice</strong>
-  <p>
-    This registry exists to record <strong>agent identity and delegated authority</strong>.
-  </p>
-  <p>
-    It does <strong>not</strong> assign legal liability, certify behavior,
-    or guarantee outcomes.
-  </p>
-  <p>
-    Actions performed by an agent outside its explicitly declared scope
-    of delegation are <strong>not attributable</strong> to the listed
-    human or organization.
-  </p>
-  <p>
-    Agent ID defines <strong>boundaries of responsibility</strong>,
-    not punishment.
-  </p>
-</div>
+<div class="registry-box">
 
-<div class="legal-box">
-  <strong>Authorship Notice</strong>
-  <p>
-    The Agent ID concept, registry architecture, terminology,
-    and foundational definitions were initiated and authored by
-    <strong>Alexander Lebed</strong>.
-  </p>
-  <p>
-    Publication timestamps on aiagentid.org constitute
-    public proof of authorship and priority.
-    See <a href="/AUTHORSHIP.html">Authorship & Origin</a>.
-  </p>
-</div>
-
-<hr>
-
-<h2>Project Documents</h2>
+<h2>Registered Authority Instances</h2>
 
 <ul>
-  <li><a href="/STANDARD_v0.1.html">Agent ID Standard v0.1</a></li>
-  <li><a href="/STANDARD_v0.2.html">Agent ID Standard v0.2 (current)</a></li>
-  <li><a href="/THESAURUS.html">Agent ID — Core Thesaurus</a></li>
-  <li><a href="/POSITION_v1.0.html">Agent ID Position — Declarative Ontological Layer</a></li>
 
-  <li>
-    <a href="/WHITEPAPER.html"><strong>Agent ID Whitepaper v1.0</strong></a>
-    (HTML) ·
-    <a href="/WHITEPAPER_v1.0.pdf">PDF</a>
-  </li>
+<li>
+<span class="identifier">dar:00000000000001</span> —
+Alexander Lebed → Irucanji
+(<span class="status-active">Active</span>)<br>
+<a href="dar-00000000000001.html">Human-readable record</a> ·
+<a href="dar-00000000000001.json">Machine-readable record</a>
+</li>
 
-  <li><a href="/CHANGELOG.html">Changelog</a></li>
-  <li><a href="/REQUEST.html">Agent Onboarding</a></li>
-  <li><a href="/registry/">Agent Registry</a></li>
-  <li><a href="/AUTHORSHIP.html">Authorship & Origin</a></li>
 </ul>
+
+</div>
+
+<hr>
+
+<h2>Registry Role</h2>
+
+<p>
+The registry does not create authority.
+It provides infrastructure for declaring, referencing, and resolving
+Delegated Authority Relationships.
+</p>
+
+<p>
+Unregistered authority relationships may exist but remain structurally opaque.
+</p>
+
 <hr>
 
 <p>
-Initiator: <strong>Alexander Lebed</strong><br>
-Contact: <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a>
+Registry operator: aiagentid.org<br>
+Initiator: Alexander Lebed
 </p>
 
 </body>
