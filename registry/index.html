@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AI Agent Registry — aiagentid.org</title>
+<meta charset="utf-8">
+<title>Delegated Authority Relationship Registry — aiagentid.org</title>
+<meta name="description" content="Registry of declared Delegated Authority Relationships (DAR) within the Agent ID standard.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="canonical" href="https://aiagentid.org/registry/">
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: #111;
+}
 
-  <meta name="description" content="Public registry of declared artificial agents and their delegated scopes of responsibility.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+h1, h2 {
+  line-height: 1.25;
+}
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #111;
-    }
-    h1, h2 { line-height: 1.25; }
-    hr { margin: 40px 0; }
-    nav a {
-      margin-right: 14px;
-      text-decoration: none;
-    }
-    nav a:hover { text-decoration: underline; }
-    ul { margin-left: 20px; }
-  </style>
+nav {
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.registry-box {
+  border: 1px solid #000;
+  padding: 18px 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+.identifier {
+  font-family: monospace;
+}
+
+.status-active {
+  color: #000;
+}
+</style>
+
 </head>
 
 <body>
@@ -34,76 +61,59 @@
 <nav>
   <a href="/">Home</a> ·
   <a href="/STANDARD_v0.2.html">Standard</a> ·
-  <a href="/AUTHORSHIP.html">Authorship</a>
+  <a href="/registry/">Registry</a>
 </nav>
 
-<h1>AI Agent Registry</h1>
+<h1>Delegated Authority Relationship Registry</h1>
 
 <p>
-This is the public registry of artificial agents.
-Each entry represents a <strong>declared agent identity</strong>
-and its <strong>delegated scope of responsibility</strong>.
+This registry records declared <strong>Delegated Authority Relationships (DAR)</strong>
+between principals and autonomous systems.
+</p>
+
+<p>
+Registry entries provide formal referenceability and structural visibility
+of declared authority relationships.
+</p>
+
+<div class="registry-box">
+
+<h2>Registered Authority Instances</h2>
+
+<ul>
+
+<li>
+<span class="identifier">dar:00000000000001</span> —
+Alexander Lebed → Irucanji
+(<span class="status-active">Active</span>)<br>
+<a href="dar-00000000000001.html">Human-readable record</a> ·
+<a href="dar-00000000000001.json">Machine-readable record</a>
+</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Registry Role</h2>
+
+<p>
+The registry does not create authority.
+It provides infrastructure for declaring, referencing, and resolving
+Delegated Authority Relationships.
+</p>
+
+<p>
+Unregistered authority relationships may exist but remain structurally opaque.
 </p>
 
 <hr>
 
-<h2>Registered Agents</h2>
-
-<ul>
-  <li>
-    <strong>aiid:00000000000001 — Irucanji</strong><br>
-    <a href="aiid-00000000000001.html">Human-readable record</a> ·
-    <a href="aiid-00000000000001.json">Machine-readable record</a>
-  </li>
-
-  <br>
-
-  <li>
-    <strong>aiid:00000000000002 — Registry Operator</strong><br>
-    <a href="aiid-00000000000002.html">Human-readable record</a> ·
-    <a href="aiid-00000000000002.json">Machine-readable record</a>
-  </li>
-
-  <br>
-
-  <li>
-    <strong>aiid:00000000000003 — TestAgent-One</strong><br>
-    <a href="aiid-00000000000003.html">Human-readable record</a> ·
-    <a href="aiid-00000000000003.json">Machine-readable record</a>
-  </li>
-</ul>
-
-<hr>
-
 <p>
-This registry is <strong>declarative and archival</strong>.<br>
-Inclusion does <strong>not</strong> imply validation, endorsement,
-certification, authority, or approval of behavior.
+Registry operator: aiagentid.org<br>
+Initiator: Alexander Lebed
 </p>
-
-<hr>
-
-<h2>Registry Documentation</h2>
-
-<ul>
-  <li>
-    <a href="/CRITERIA_v1.0.json">
-      Registry Admission Criteria v1.0 (machine-enforced, frozen)
-    </a>
-  </li>
-
-  <li>
-    <a href="/SUBMISSION.html">
-      Agent Registry Submission Protocol
-    </a>
-  </li>
-
-  <li>
-    <a href="/OPER_v0.2.html">
-      Registry Operation Model v0.2
-    </a>
-  </li>
-</ul>
 
 </body>
 </html>
