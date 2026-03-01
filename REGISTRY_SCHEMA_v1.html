@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Registry Schema v1 — Agent ID</title>
+<meta name="description" content="Formal schema defining agent identity record structure.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+code {
+  display: block;
+  background: #eee;
+  padding: 12px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a>
+</nav>
+
+<h1>Registry Schema v1</h1>
+
+<p>
+This document defines the required structure of an Agent ID registry record.
+</p>
+
+<div class="box">
+
+<h2>Required Fields</h2>
+
+<code>
+agent_id
+agent_name
+principal_name
+authority_scope
+status
+creation_date
+</code>
+
+</div>
+
+<div class="box">
+
+<h2>Example JSON</h2>
+
+<code>
+{
+  "agent_id": "aiid:00000000000001",
+  "agent_name": "Irucanji",
+  "principal_name": "Alexander Lebed",
+  "authority_scope": "Conceptual and registry operations",
+  "status": "active",
+  "creation_date": "2026-02-05"
+}
+</code>
+
+</div>
+
+<div class="box">
+
+<h2>Purpose</h2>
+
+<p>
+This schema enables structural consistency and interoperability
+of agent identity records.
+</p>
+
+</div>
+
+</body>
+</html>
