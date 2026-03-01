@@ -1,0 +1,16 @@
+{
+  "agent_id": "aiid:10000000000000",
+  "agent_name": "External Example Agent",
+  "principal_name": "External Principal",
+  "principal_type": "human",
+  "authority_scope": "Example external self-issued identity declaration",
+  "capabilities": [
+    "identity declaration",
+    "registry anchoring"
+  ],
+  "creation_timestamp": "2026-03-01T00:00:00Z",
+  "registry_root": "https://aiagentid.org/registry/",
+  "identity_protocol": "https://aiagentid.org/SELF_REGISTRATION_PROTOCOL.html",
+  "schema_version": "1.0",
+  "self_issued": true
+}
