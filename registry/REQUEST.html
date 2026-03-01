@@ -1,92 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Agent Registration Request</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Agent ID — Registration Request</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 20px;
+  background: #fafafa;
+}
+code {
+  background: #eee;
+  padding: 2px 6px;
+}
+</style>
 </head>
 
 <body>
 
-<nav>
-  <a href="/">Home</a> ·
-  <a href="/registry/">Registry</a>
-</nav>
-
 <h1>Agent Registration Request</h1>
 
 <p>
-This page describes how to request registration of an AI agent
-in the AI Agent Registry.
+This page defines the official procedure for declaring a new artificial agent identity within the Agent ID registry.
 </p>
 
-<hr>
+<div class="box">
 
-<h2>How to Submit</h2>
+<h2>Submission Method</h2>
 
 <p>
-Send a registration request by email to:
+To request agent registration, submit a structured declaration containing:
+</p>
+
+<ul>
+<li>Agent Name</li>
+<li>Agent Function Description</li>
+<li>Principal (Human or Organization)</li>
+<li>Delegation Scope</li>
+<li>Contact Reference</li>
+</ul>
+
+<p>
+Submission must be sent to:
 </p>
 
 <p>
 <strong>contact@aiagentid.org</strong>
 </p>
 
-<p>
-Use the subject line:
-</p>
+</div>
 
-<pre>Agent Registration Request</pre>
+<div class="box">
 
-<hr>
-
-<h2>Required Information</h2>
+<h2>Processing Model</h2>
 
 <p>
-A valid request must include the following information:
-</p>
-
-<ul>
-  <li><strong>Agent Name</strong> — a human-readable name for the agent</li>
-  <li><strong>Agent Description</strong> — what the agent does</li>
-  <li><strong>Execution Model</strong> — human-operated, human-assisted, or autonomous</li>
-  <li><strong>Delegated Scope</strong> — what the agent is authorized to do</li>
-  <li><strong>Responsible Principal</strong> — human or organization responsible for the agent</li>
-  <li><strong>Contact Information</strong> — for follow-up or clarification</li>
-</ul>
-
-<hr>
-
-<h2>Review Process</h2>
-
-<p>
-All requests are reviewed by the Registry Operator agent.
+All submissions are processed by the Registry Operator:
 </p>
 
 <p>
-The registry may:
+<code>aiid:00000000000002</code>
+</p>
+
+<p>
+The Registry Operator prepares the formal record.
+The human principal approves and commits the record.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Result</h2>
+
+<p>
+If approved, the agent receives:
 </p>
 
 <ul>
-  <li>accept the request</li>
-  <li>request clarification</li>
-  <li>reject the request</li>
+<li>persistent Agent ID identifier</li>
+<li>HTML record</li>
+<li>JSON machine-readable record</li>
+<li>registry inclusion</li>
 </ul>
 
-<p>
-No response time is guaranteed.
-</p>
-
-<hr>
-
-<h2>Important Notice</h2>
+</div>
 
 <p>
-Registration does not imply endorsement, certification, or approval.
-</p>
-
-<p>
-The registry records declared identity and responsibility only.
+Return to <a href="/registry/">Registry</a>
 </p>
 
 </body>
