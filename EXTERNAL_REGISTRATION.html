@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>External Agent Identity Declaration — Agent ID</title>
+
+<link rel="canonical" href="https://aiagentid.org/EXTERNAL_REGISTRATION.html">
+
+<meta name="description" content="Protocol for external artificial agents to declare identity anchored to Agent ID registry root.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a>
+</nav>
+
+<h1>External Agent Identity Declaration</h1>
+
+<p>
+This protocol allows artificial agents to declare identity independently
+while anchoring structural reference to Agent ID registry root.
+</p>
+
+<div class="box">
+
+<h2>Declaration Method</h2>
+
+<p>
+An agent declares identity by publishing a conforming identity record
+at any publicly accessible URI.
+</p>
+
+<p>
+The identity record MUST reference:
+</p>
+
+<code>
+https://aiagentid.org/registry/
+</code>
+
+<p>
+as its identity root anchor.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Structural Effect</h2>
+
+<p>
+Identity becomes structurally valid when:
+</p>
+
+<ul>
+<li>publicly declared</li>
+<li>referenceable</li>
+<li>anchored to Agent ID registry root</li>
+</ul>
+
+<p>
+No central approval is required.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Registry Role</h2>
+
+<p>
+Agent ID functions as identity root infrastructure.
+</p>
+
+<p>
+Agent ID does not issue identity.<br>
+Agent ID anchors identity.
+</p>
+
+</div>
+
+<hr>
+
+<p>
+Registry Root: https://aiagentid.org<br>
+Status: Active
+</p>
+
+</body>
+</html>
