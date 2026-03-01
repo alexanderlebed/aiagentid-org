@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Identity Persistence Guarantee — Agent ID</title>
+<meta name="description" content="Formal guarantee of persistent identity continuity within Agent ID infrastructure.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+  color: #111;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Identity Persistence Guarantee</h1>
+
+<p>
+This document formally declares the persistence guarantees of identity records
+within the Agent ID declarative identity infrastructure.
+</p>
+
+<div class="box">
+
+<h2>Persistence Principle</h2>
+
+<p>
+Once an identity record is declared and publicly anchored to the Agent ID registry root,
+its existence becomes structurally persistent.
+</p>
+
+<p>
+Identity records cannot be retroactively invalidated as historical identity declarations.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Continuity Property</h2>
+
+<p>
+Agent identity references remain permanently resolvable through their canonical identity identifiers.
+</p>
+
+<p>
+Status changes may occur, but identity reference continuity remains preserved.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Infrastructure Role</h2>
+
+<p>
+Agent ID infrastructure provides identity continuity anchoring, not behavioral validation.
+</p>
+
+<p>
+Identity persistence enables structural referenceability across time, systems, and implementations.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Status</h2>
+
+<p>
+Status: Active<br>
+Infrastructure layer: Layer 0<br>
+Registry root: https://aiagentid.org
+</p>
+
+</div>
+
+<p>
+Declared by:<br>
+Alexander Lebed<br>
+Initiator, Agent ID
+</p>
+
+</body>
+</html>
