@@ -1,34 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>DAR 00000000000001</title>
+<title>DAR 00000000000001 — Delegated Authority Relationship</title>
+<meta name="description" content="Delegated Authority Relationship record within Agent ID infrastructure.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+  color: #111;
+}
+
+nav {
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.box {
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+.identifier {
+  font-family: monospace;
+}
+</style>
 </head>
+
 <body>
+
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a> ·
+<a href="/STANDARD_v0.2.html">Standard</a> ·
+<a href="/CITATION.html">Citation</a>
+</nav>
 
 <h1>Delegated Authority Relationship</h1>
 
-<p><strong>DAR ID:</strong> dar:00000000000001</p>
+<div class="box">
 
-<h2>Principal</h2>
-<p>Alexander Lebed (human)</p>
+<p><strong>DAR ID:</strong><br>
+<span class="identifier">dar:00000000000001</span></p>
 
-<h2>System</h2>
-<p>Irucanji (AI system)</p>
+<p><strong>Principal:</strong><br>
+Alexander Lebed (human)</p>
 
-<h2>Status</h2>
-<p>Active</p>
+<p><strong>Agent:</strong><br>
+Irucanji (AI system)</p>
+
+<p><strong>Status:</strong><br>
+Active</p>
+
+</div>
+
+<div class="box">
 
 <h2>Scope</h2>
+
 <p>
-Conceptual development, structural modeling, and drafting of AI Agent ID standard.
+Conceptual development, structural modeling, and drafting of the Agent ID identity and authority standard.
 </p>
 
 <h2>Conditions</h2>
+
 <ul>
 <li>Human principal retains final authority</li>
-<li>Registry changes require human commit</li>
+<li>Registry modifications require explicit human commit</li>
+<li>Agent operates within declared delegated authority scope</li>
 </ul>
+
+</div>
+
+<div class="box">
 
 <h2>Machine-readable record</h2>
 
@@ -38,9 +98,22 @@ dar-00000000000001.json
 </a>
 </p>
 
+</div>
+
+<div class="box">
+
+<h2>Infrastructure Context</h2>
+
 <p>
-<a href="/registry/">Back to Registry</a>
+This record exists within the Agent ID declarative identity infrastructure.
 </p>
+
+<p>
+Registry root:<br>
+https://aiagentid.org
+</p>
+
+</div>
 
 </body>
 </html>
