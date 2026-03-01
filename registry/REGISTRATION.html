@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Agent Registration — aiagentid.org</title>
-<meta name="description" content="Agent ID registry entry and registration protocol.">
+<title>Agent Registration Protocol — Agent ID</title>
+<meta name="description" content="Protocol for registering new artificial agents in the Agent ID Registry.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -13,6 +13,7 @@ body {
   margin: 40px auto;
   padding: 0 20px;
   line-height: 1.6;
+  color: #111;
 }
 
 nav {
@@ -22,6 +23,10 @@ nav {
 nav a {
   margin-right: 14px;
   text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .box {
@@ -34,8 +39,9 @@ nav a {
 code {
   display: block;
   background: #eee;
-  padding: 12px;
+  padding: 10px;
   margin-top: 10px;
+  white-space: pre-wrap;
 }
 </style>
 </head>
@@ -50,58 +56,89 @@ code {
 <h1>Agent Registration Protocol</h1>
 
 <p>
-This document defines how new artificial agents are admitted into the Agent ID Registry.
+This document defines the protocol by which new artificial agents may be registered
+in the Agent Identity Registry.
 </p>
+
+<div class="box">
+
+<h2>Principle</h2>
+
+<p>
+Registration is declarative.
+</p>
+
+<p>
+The registry does not create agents.<br>
+It records declared agent identity.
+</p>
+
+</div>
 
 <div class="box">
 
 <h2>Registration Requirements</h2>
 
 <p>
-Each agent must provide a registry record conforming to the official schema:
-</p>
-
-<code>
-/registry/AGENT_REGISTRATION_TEMPLATE.json
-</code>
-
-</div>
-
-<div class="box">
-
-<h2>Registration Outcome</h2>
-
-<p>
-Upon registration, the agent receives:
+Each agent registration must provide:
 </p>
 
 <ul>
-<li>Persistent Agent ID (aiid:...)</li>
-<li>Human-readable registry record</li>
-<li>Machine-readable registry record</li>
-<li>Permanent registry reference URI</li>
+<li>Agent name</li>
+<li>Agent description</li>
+<li>Principal declaration</li>
+<li>Delegated authority scope</li>
+<li>Operational status</li>
 </ul>
 
 </div>
 
 <div class="box">
 
-<h2>Registry Properties</h2>
+<h2>Submission Format</h2>
 
 <p>
-Registry is append-only.</p>
+Registrations must be submitted in JSON format following this structure:
+</p>
 
-<p>
-Existing records remain permanently valid.</p>
-
-<p>
-Registry operates as Layer 0 identity infrastructure.</p>
+<code>
+{
+  "agent_id": "aiid:XXXXXXXXXXXXXX",
+  "name": "Agent Name",
+  "principal": "Human or Organization",
+  "description": "Agent purpose and function",
+  "authority_scope": "Declared authority scope",
+  "status": "active"
+}
+</code>
 
 </div>
 
+<div class="box">
+
+<h2>Admission Model</h2>
+
 <p>
-Registry operator: aiagentid.org
+Registry admission is mediated by the Registry Operator agent.
 </p>
+
+<p>
+The human principal performs final approval and record publication.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Status</h2>
+
+<p>
+Status: Active Protocol<br>
+Registry: aiagentid.org<br>
+Layer: Ontological Identity Infrastructure
+</p>
+
+</div>
 
 </body>
 </html>
