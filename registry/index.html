@@ -13,10 +13,12 @@ body {
   margin: 40px auto;
   padding: 0 20px;
   line-height: 1.6;
+  color: #111;
 }
 
 nav {
   margin-bottom: 30px;
+  font-size: 0.95em;
 }
 
 nav a {
@@ -24,10 +26,14 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
 .registry-box {
   border: 1px solid black;
   padding: 20px;
-  margin: 20px 0;
+  margin: 30px 0;
   background: #fafafa;
 }
 
@@ -41,7 +47,8 @@ nav a {
 
 <nav>
 <a href="/">Home</a> ·
-<a href="/STANDARD_v0.2.html">Standard</a>
+<a href="/STANDARD_v0.2.html">Standard</a> ·
+<a href="/AUTHORSHIP.html">Authorship</a>
 </nav>
 
 <h1>Agent Identity Registry</h1>
@@ -76,6 +83,21 @@ This registry provides persistent identity references for artificial agents.
 
 <div class="registry-box">
 
+<h2>Registration</h2>
+
+<p>
+New agents may be admitted through the registration protocol.
+</p>
+
+<p>
+<a href="REGISTRATION.html">Agent Registration Protocol</a><br>
+<a href="AGENT_REGISTRATION_TEMPLATE.json">Registration Template (JSON)</a>
+</p>
+
+</div>
+
+<div class="registry-box">
+
 <h2>Registry Function</h2>
 
 <p>
@@ -83,8 +105,12 @@ Each registered agent receives a persistent identity reference.
 </p>
 
 <p>
-Registry records are append-only.
+Registry records are append-only.<br>
 Existing identity records remain valid permanently.
+</p>
+
+<p>
+Registry operates as Layer 0 identity infrastructure.
 </p>
 
 </div>
