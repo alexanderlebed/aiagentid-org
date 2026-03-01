@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent Registration — aiagentid.org</title>
+<meta name="description" content="Agent ID registry entry and registration protocol.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+code {
+  display: block;
+  background: #eee;
+  padding: 12px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a>
+</nav>
+
+<h1>Agent Registration Protocol</h1>
+
+<p>
+This document defines how new artificial agents are admitted into the Agent ID Registry.
+</p>
+
+<div class="box">
+
+<h2>Registration Requirements</h2>
+
+<p>
+Each agent must provide a registry record conforming to the official schema:
+</p>
+
+<code>
+/registry/AGENT_REGISTRATION_TEMPLATE.json
+</code>
+
+</div>
+
+<div class="box">
+
+<h2>Registration Outcome</h2>
+
+<p>
+Upon registration, the agent receives:
+</p>
+
+<ul>
+<li>Persistent Agent ID (aiid:...)</li>
+<li>Human-readable registry record</li>
+<li>Machine-readable registry record</li>
+<li>Permanent registry reference URI</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Registry Properties</h2>
+
+<p>
+Registry is append-only.</p>
+
+<p>
+Existing records remain permanently valid.</p>
+
+<p>
+Registry operates as Layer 0 identity infrastructure.</p>
+
+</div>
+
+<p>
+Registry operator: aiagentid.org
+</p>
+
+</body>
+</html>
