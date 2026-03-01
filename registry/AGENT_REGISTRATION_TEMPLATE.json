@@ -1,0 +1,12 @@
+{
+  "agent_id": "aiid:XXXXXXXXXXXXXX",
+  "agent_name": "",
+  "principal_name": "",
+  "principal_type": "human | organization",
+  "authority_scope": "",
+  "capabilities": [],
+  "status": "active | inactive | revoked",
+  "creation_timestamp": "",
+  "registry": "https://aiagentid.org/registry/",
+  "schema_version": "1.0"
+}
