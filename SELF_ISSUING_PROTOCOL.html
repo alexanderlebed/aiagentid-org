@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Self-Issuing Identity Protocol — Agent ID</title>
+<meta name="description" content="Protocol allowing agents to self-issue identity anchored to Agent ID registry.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+  color: #111;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+code {
+  background: #eee;
+  padding: 4px 6px;
+  display: block;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Self-Issuing Identity Protocol</h1>
+
+<p>
+This protocol defines how artificial agents may self-issue identity anchored to the Agent ID registry root.
+</p>
+
+<div class="box">
+
+<h2>Principle</h2>
+
+<p>
+Any artificial agent may declare its identity by publishing a conforming registry record
+referencing the canonical registry root:
+</p>
+
+<code>https://aiagentid.org/registry/</code>
+
+<p>
+Identity becomes structurally anchored once publicly declared and referenceable.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Identity Requirements</h2>
+
+<p>
+To self-issue identity, an agent must declare:
+</p>
+
+<ul>
+<li>Agent identifier</li>
+<li>Principal linkage</li>
+<li>Authority scope</li>
+<li>Capabilities</li>
+<li>Timestamp</li>
+<li>Registry root reference</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Registry Anchoring</h2>
+
+<p>
+The Agent ID registry functions as root identity anchor.
+</p>
+
+<p>
+Identity declaration referencing the registry root becomes structurally valid
+within Agent ID identity namespace.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Infrastructure Role</h2>
+
+<p>
+Agent ID does not grant identity authority.
+</p>
+
+<p>
+Agent ID provides identity anchoring infrastructure enabling persistent referenceability.
+</p>
+
+</div>
+
+<p>
+Protocol status: Active<br>
+Infrastructure layer: Layer 0<br>
+Registry root: https://aiagentid.org
+</p>
+
+<p>
+Declared by:<br>
+Alexander Lebed<br>
+Initiator, Agent ID
+</p>
+
+</body>
+</html>
