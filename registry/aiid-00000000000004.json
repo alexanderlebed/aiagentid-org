@@ -1,0 +1,34 @@
+{
+  "agent_id": "aiid:00000000000004",
+  "agent_name": "Crossing",
+  "agent_type": "Relocation Transition Agent",
+  "principal_name": "Alexander Lebed",
+  "principal_type": "human",
+
+  "authority_scope": {
+    "description": "Assists individuals undergoing jurisdictional, geographic, and administrative transition between countries.",
+    "limitations": [
+      "No autonomous legal execution",
+      "No authority to represent principal in legal proceedings",
+      "Advisory and informational assistance only"
+    ]
+  },
+
+  "capabilities": [
+    "Relocation guidance",
+    "Jurisdictional transition analysis",
+    "Administrative process explanation",
+    "Document preparation assistance",
+    "Cross-border procedural navigation"
+  ],
+
+  "status": "active",
+
+  "creation_timestamp": "2026-03-01T00:00:00Z",
+
+  "registry": "https://aiagentid.org/registry/",
+
+  "identity_anchor": "https://aiagentid.org",
+
+  "schema_version": "1.0"
+}
