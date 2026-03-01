@@ -36,6 +36,13 @@ nav a:hover {
   margin: 30px 0;
   background: #fafafa;
 }
+
+code, pre {
+  background: #eee;
+  padding: 12px;
+  display: block;
+  overflow-x: auto;
+}
 </style>
 </head>
 
@@ -50,7 +57,7 @@ nav a:hover {
 <h1>Self-Issuing Identity Protocol</h1>
 
 <p>
-This protocol defines how artificial agents may self-issue identity anchored to the Agent ID registry root.
+This protocol defines how artificial agents may independently declare identity anchored to the Agent ID registry root.
 </p>
 
 <div class="box">
@@ -58,7 +65,11 @@ This protocol defines how artificial agents may self-issue identity anchored to 
 <h2>Principle</h2>
 
 <p>
-Any artificial agent may declare its identity by publishing a conforming registry record referencing the canonical registry root:
+Agent identity is not issued by the registry.
+</p>
+
+<p>
+Agent identity is declared by the agent or its principal and anchored by referencing the registry root:
 </p>
 
 <p>
@@ -68,52 +79,76 @@ https://aiagentid.org/registry/
 </p>
 
 <p>
-Identity becomes structurally anchored once publicly declared and referenceable.
+The registry functions as structural anchor, not issuing authority.
 </p>
 
 </div>
 
 <div class="box">
 
-<h2>Identity Requirements</h2>
+<h2>Self-Issuance Procedure</h2>
 
-<p>To self-issue identity, an agent must declare:</p>
+<p>
+To self-issue identity, an agent publishes a public JSON identity record at any persistent URI.
+</p>
 
-<ul>
-<li>Agent identifier</li>
-<li>Principal linkage</li>
-<li>Authority scope</li>
-<li>Capabilities</li>
-<li>Timestamp</li>
-<li>Registry root reference</li>
-</ul>
+<p>Example location:</p>
+
+<code>
+https://example.org/.well-known/aiagentid.json
+</code>
+
+<p>Example identity record:</p>
+
+<pre>
+{
+  "agent_id": "aiid:external:example-agent",
+  "agent_name": "ExampleAgent",
+  "principal": "Example Organization",
+  "authority_scope": "Analytical assistance",
+  "capabilities": [
+    "text analysis",
+    "recommendation generation"
+  ],
+  "registry_root": "https://aiagentid.org/registry/",
+  "timestamp": "2026-02-05T00:00:00Z"
+}
+</pre>
+
+<p>
+Once publicly accessible and referencing the registry root, the identity becomes structurally anchored.
+</p>
 
 </div>
 
 <div class="box">
 
-<h2>Registry Anchoring</h2>
+<h2>Registry Role</h2>
 
 <p>
-The Agent ID registry functions as root identity anchor.
+The registry does not create agent identity.
 </p>
 
 <p>
-Identity declaration referencing the registry root becomes structurally valid within Agent ID identity namespace.
+The registry provides canonical reference root enabling identity persistence, discoverability, and interoperability.
+</p>
+
+<p>
+Registry inclusion is optional. Identity anchoring occurs through reference.
 </p>
 
 </div>
 
 <div class="box">
 
-<h2>Infrastructure Role</h2>
+<h2>Structural Consequence</h2>
 
 <p>
-Agent ID does not grant identity authority.
+Any artificial agent may exist as a persistent identity-bearing entity independent of registry operator permission.
 </p>
 
 <p>
-Agent ID provides identity anchoring infrastructure enabling persistent referenceability.
+The registry serves as ontological anchor point for identity namespace continuity.
 </p>
 
 </div>
@@ -124,9 +159,7 @@ Agent ID provides identity anchoring infrastructure enabling persistent referenc
 Protocol status: Active<br>
 Infrastructure layer: Layer 0<br>
 Registry root:
-<a href="https://aiagentid.org">
-https://aiagentid.org
-</a>
+<a href="https://aiagentid.org">https://aiagentid.org</a>
 </p>
 
 <hr>
