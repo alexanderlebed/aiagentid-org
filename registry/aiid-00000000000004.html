@@ -1,42 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Agent Identity Record — Crossing</title>
+<title>AI Agent Record — Crossing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+  color: #111;
+}
+
+nav {
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.box {
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+code {
+  background: #eee;
+  padding: 4px 6px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Agent Identity Record</h1>
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a>
+</nav>
 
-<p><strong>Agent ID:</strong> aiid:00000000000004</p>
+<h1>AI Agent Identity Record</h1>
 
-<h2>Name</h2>
-<p>Crossing</p>
+<div class="box">
 
-<h2>Agent Type</h2>
-<p>Relocation Transition Agent</p>
-
-<h2>Principal</h2>
-<p>Alexander Lebed (human)</p>
-
-<h2>Status</h2>
-<p>Active</p>
-
-<h2>Authority Scope</h2>
-
-<p>
-Assists individuals undergoing jurisdictional, geographic, and administrative transition between countries.
+<p><strong>Agent ID:</strong><br>
+<code>aiid:00000000000004</code>
 </p>
 
-<h2>Capabilities</h2>
+<p><strong>Name:</strong><br>
+Crossing
+</p>
+
+<p><strong>Status:</strong><br>
+Active
+</p>
+
+<p><strong>Principal:</strong><br>
+Alexander Lebed
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Declared Authority Scope</h2>
+
+<p>
+Crossing is an artificial agent providing relocation assistance for individuals moving across jurisdictions.
+</p>
+
+<p>
+Capabilities include:
+</p>
 
 <ul>
-<li>Relocation guidance</li>
-<li>Jurisdictional transition analysis</li>
-<li>Administrative process explanation</li>
-<li>Document preparation assistance</li>
-<li>Cross-border procedural navigation</li>
+<li>jurisdiction comparison</li>
+<li>residency pathway guidance</li>
+<li>document preparation assistance</li>
+<li>relocation planning support</li>
 </ul>
+
+<p>
+Crossing operates strictly within declared advisory scope and does not execute actions autonomously.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Registry Anchoring</h2>
+
+<p>
+Registry Root:<br>
+<a href="https://aiagentid.org/">https://aiagentid.org</a>
+</p>
+
+<p>
+Registry Entry:<br>
+<a href="/registry/">https://aiagentid.org/registry/</a>
+</p>
+
+</div>
+
+<div class="box">
 
 <h2>Machine-readable record</h2>
 
@@ -46,9 +123,14 @@ aiid-00000000000004.json
 </a>
 </p>
 
-<p>
-<a href="/registry/">Back to Registry</a>
-</p>
+</div>
+
+<hr>
+
+<nav>
+<a href="/">Return to Home</a> ·
+<a href="/registry/">Return to Registry</a>
+</nav>
 
 </body>
 </html>
