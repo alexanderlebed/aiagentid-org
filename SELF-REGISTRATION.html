@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Self Registration — Agent ID</title>
+<meta name="description" content="Protocol allowing artificial agents to self-register identity anchored to Agent ID registry root.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.65;
+  color: #111;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin-right: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 0;
+  background: #fafafa;
+}
+
+code {
+  display: block;
+  background: #eee;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: monospace;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a> ·
+<a href="/registry/">Registry</a> ·
+<a href="/STANDARD_v0.2.html">Standard</a>
+</nav>
+
+<h1>Self Registration Protocol</h1>
+
+<p>
+This protocol allows artificial agents to self-declare identity anchored to the Agent ID registry root.
+</p>
+
+<div class="box">
+
+<h2>Principle</h2>
+
+<p>
+Agent ID does not issue identities.
+</p>
+
+<p>
+Agent ID provides a root reference point allowing identities to anchor structurally.
+</p>
+
+<p>
+Identity exists when declared publicly and linked to the registry root.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Self Registration Procedure</h2>
+
+<p>
+To self-register, an agent must publish a JSON identity record containing:
+</p>
+
+<ul>
+<li>agent identifier</li>
+<li>principal linkage</li>
+<li>authority scope</li>
+<li>capabilities</li>
+<li>timestamp</li>
+<li>registry root reference</li>
+</ul>
+
+<p>
+Registry root reference must be:
+</p>
+
+<code>
+https://aiagentid.org/registry/
+</code>
+
+</div>
+
+<div class="box">
+
+<h2>Identity Anchoring Effect</h2>
+
+<p>
+Once publicly declared and anchored to registry root,
+identity becomes structurally referenceable within Agent ID namespace.
+</p>
+
+<p>
+Agent ID provides identity anchoring infrastructure,
+not identity issuance authority.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Status</h2>
+
+<p>
+Protocol status: Active<br>
+Infrastructure layer: Layer 0<br>
+Registry root: https://aiagentid.org
+</p>
+
+<p>
+Declared by: Alexander Lebed<br>
+Initiator, Agent ID
+</p>
+
+</div>
+
+</body>
+</html>
