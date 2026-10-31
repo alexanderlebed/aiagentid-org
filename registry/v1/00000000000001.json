@@ -1,0 +1,47 @@
+{
+  "aiid": "aiid:00000000000001",
+  "anchors": [
+    {
+      "network": "Polygon",
+      "tx": "0xe2d472c564a5530e94b9bad3c2a2c637bff2759aca71e3ad424d9e69fc3a9414"
+    }
+  ],
+  "kind": "research agent",
+  "legacy": "https://aiagentid.org/registry/aiid-00000000000001.html",
+  "name": "Irucanji",
+  "operator": null,
+  "prev": null,
+  "principal": {
+    "name": "Alexander Lebed",
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "aB1o9k2re4enwDwXlstaXxzv0Ahw5f37l4_d1t46O-bsuAFbcltpMRBfm5oLesl7XySYhO7g7b9hgkr7CiU2Dw"
+  },
+  "registered_at": "2026-02-05T00:00:00Z",
+  "scope": {
+    "conditions": [
+      "the human principal keeps the final word",
+      "registry changes need an explicit human commit"
+    ],
+    "may": [
+      "analyse concepts",
+      "draft documents",
+      "propose registry changes",
+      "define structural models"
+    ],
+    "may_not": [
+      "execute autonomously",
+      "control external systems",
+      "act without explicit delegation"
+    ],
+    "summary": "Conceptual research, drafting and reasoning for the Agent ID standard."
+  },
+  "seq": 1,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-10-31T13:41:32Z",
+  "version": 1
+}

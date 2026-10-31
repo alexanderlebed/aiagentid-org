@@ -1,0 +1,43 @@
+{
+  "aiid": "aiid:00000000000002",
+  "anchors": [
+    {
+      "network": "Polygon",
+      "tx": "0x79b7f79e8c78e71d309ead0295a6bb04d186ee36c2f8bd7fc5c6ad297208b460"
+    }
+  ],
+  "kind": "registry agent",
+  "legacy": "https://aiagentid.org/registry/aiid-00000000000002.html",
+  "name": "Registry Operator",
+  "operator": null,
+  "prev": "sha256:df5c5aeac1db9679e2982dfaecc0af40c3ba45b3e56d2d07f01513a5ae9d750e",
+  "principal": {
+    "name": "Alexander Lebed",
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "9DZPq9qOn3TkPwjgXDvRgLOIzuOqEM9qyM5Q-bziA6loBMh0k80lH7GNvvMJqmg19zblJ_dTvg6qsDQy0tanCg"
+  },
+  "registered_at": "2026-02-05T00:00:00Z",
+  "scope": {
+    "conditions": [
+      "every action needs human approval"
+    ],
+    "may": [
+      "prepare registry entries",
+      "evaluate requests"
+    ],
+    "may_not": [
+      "change the registry on its own",
+      "execute autonomously"
+    ],
+    "summary": "Prepares registry entries and evaluates registration requests."
+  },
+  "seq": 2,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-10-31T13:41:32Z",
+  "version": 1
+}

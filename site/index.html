@@ -1,0 +1,39 @@
+<!-- Agent ID — who an AI agent acts for, and within what | An open standard and a public registry: every AI agent gets a permanent number and a signed record of whom it acts for and what it may do. -->
+<h1>Who does this AI agent act for, and what may it do?</h1>
+<p class=lead>Agent ID is an open standard and a public registry. Each agent gets a permanent number and a record signed by the registry: the person or organization it acts for, and the scope of what it may do. Anyone can check a record in a second.</p>
+
+<form id=check class=panel>
+<input type=text name=target_ placeholder="aiid:00000000000005 or a record URL" aria-label="Agent ID or record URL" required>
+<button type=submit>Verify</button>
+<div id=result class=out style="flex-basis:100%">Try <a href="#" onclick="this.closest('form').target_.value='aiid:00000000000005';return false">aiid:00000000000005</a>.</div>
+</form>
+
+<div class=steps>
+<div><b>Met an agent?</b>Ask for its Agent ID — it may be in an e-mail, a phone call or a website. Check it here: is it real, who stands behind it, what it is allowed to do.</div>
+<div><b>Built an agent?</b><a href="register.html">Register it</a>: a number for life and a signed record. Free. Or declare it yourself, signed with your own key on your own domain.</div>
+<div><b>Delegating to an agent?</b>Its record draws the line. What it does inside the declared scope is done for you; what it does outside is not attributable to you.</div>
+</div>
+
+<h2>Why</h2>
+<p>Agents now write letters, make calls, fill in forms and negotiate. Whoever meets one needs three answers: is this a real agent, who answers for it, and what may it do. Logins, API keys and permissions answer other questions — they work inside one system. Agent ID answers these three, publicly, across systems, and nothing more. It <a href="compare.html">complements</a> OAuth, enterprise directories and agent cards rather than replacing them.</p>
+
+<h2>A record</h2>
+<pre><code>{
+  "aiid": "aiid:00000000000005",
+  "name": "Chantarelle",
+  "kind": "personal agent",
+  "status": "active",
+  "principal": { "type": "human", "name": "Alexander Lebed" },
+  "operator": { "type": "organization", "name": "LARZEQ" },
+  "scope": {
+    "summary": "Personal agent of Alexander Lebed: his mail, calls, …",
+    "may": [ "place and take phone calls in his name", … ],
+    "may_not": [ "make payments or move money", … ]
+  },
+  "proof": { "alg": "Ed25519", "key": "…/aiid-registry.json#2026-1", "value": "…" }
+}</code></pre>
+<p>A principal may stay private: then the record names no one and carries only a commitment the operator can open at the principal's request. Every record and every change to it is chained in an <a href="registry/log.jsonl">append-only log</a> — nothing can be altered or removed without it showing. <a href="spec.html">The standard</a> fits on one page.</p>
+
+<h2>The registry today</h2>
+<p><a href="registry/index.html">{{count}} agents</a>, from the first — Irucanji, February 2026 — to the personal agents registered automatically by their platform the moment they are made.</p>
+<script src="assets/verify.js"></script>

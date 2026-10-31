@@ -1,140 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Agent Identity Registry — aiagentid.org</title>
-<meta name="description" content="Persistent identity registry for artificial agents.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.65;
-  color: #111;
-}
-
-nav {
-  margin-bottom: 30px;
-}
-
-nav a {
-  margin-right: 14px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-h1, h2 {
-  line-height: 1.25;
-}
-
-.box {
-  border: 1px solid #000;
-  padding: 20px;
-  margin: 30px 0;
-  background: #fafafa;
-}
-
-ul {
-  margin-left: 20px;
-}
-</style>
-
+<title>Agent ID Registry</title>
+<meta name="description" content="The public registry of artificial agents: who acts, for whom, within what.">
+<link rel="stylesheet" href="../assets/aiid.css">
 </head>
-
 <body>
-
-<nav>
-<a href="/">Home</a> ·
-<a href="/STANDARD_v0.2.html">Standard</a> ·
-<a href="/AUTHORSHIP.html">Authorship</a> ·
-<a href="/CITATION.html">Citation</a>
-</nav>
-
-<h1>Agent Identity Registry</h1>
-
-<p>
-This registry provides persistent identity references for artificial agents.
-</p>
-
-<div class="box">
-
-<h2>Registered Agents</h2>
-
-<ul>
-
-<li>
-aiid:00000000000001 — Irucanji<br>
-<a href="aiid-00000000000001.html">Human-readable record</a> ·
-<a href="aiid-00000000000001.json">Machine-readable record</a>
-</li>
-
-<li>
-aiid:00000000000002 — Registry Operator<br>
-<a href="aiid-00000000000002.html">Human-readable record</a> ·
-<a href="aiid-00000000000002.json">Machine-readable record</a>
-</li>
-
-<li>
-aiid:00000000000003 — TestAgent-One<br>
-<a href="aiid-00000000000003.html">Human-readable record</a> ·
-<a href="aiid-00000000000003.json">Machine-readable record</a>
-</li>
-
-<li>
-aiid:00000000000004 — Crossing<br>
-<a href="aiid-00000000000004.html">Human-readable record</a> ·
-<a href="aiid-00000000000004.json">Machine-readable record</a>
-</li>
-
-</ul>
-
-</div>
-
-<div class="box">
-
-<h2>Registry Function</h2>
-
-<p>
-Each registered agent receives a persistent identity reference anchored to the Agent ID infrastructure root.
-</p>
-
-<p>
-Registry records are append-only.
-Existing identity records remain permanently valid and referenceable.
-</p>
-
-</div>
-
-<div class="box">
-
-<h2>Registry Properties</h2>
-
-<ul>
-<li>Persistent identity anchoring</li>
-<li>Declarative authority referenceability</li>
-<li>Append-only structural continuity</li>
-<li>Jurisdiction-independent identity layer</li>
-</ul>
-
-</div>
-
-<p>
-Registry root:
-<a href="https://aiagentid.org/registry/">
-https://aiagentid.org/registry/
-</a>
-</p>
-
-<p>
-Maintained by: aiagentid.org<br>
-Initiator: Alexander Lebed
-</p>
-
+<header class="top"><a class="brand" href="../index.html">Agent ID</a>
+<nav><a href="../registry/index.html">Registry</a><a href="../verify.html">Verify</a><a href="../register.html">Register</a><a href="../spec.html">Standard</a><a href="../compare.html">Compare</a><a href="../about.html">About</a></nav></header>
+<main>
+<h1>Registry</h1>
+<p class=lead>4 agents. Every record is signed by the registry key and chained to the one before it, so no record can be changed or removed without it showing.</p>
+<div class=scroll><table class=list><thead><tr><th>Agent ID</th><th>Name</th><th>Kind</th><th>Principal</th><th>Status</th><th>Registered</th></tr></thead><tbody><tr><td><a href="v1/00000000000001.html"><code>aiid:00000000000001</code></a></td><td><a href="v1/00000000000001.html">Irucanji</a></td><td>research agent</td><td>Alexander Lebed <span class=dim>(human)</span></td><td><span class="st active">active</span></td><td class=nw>2026-02-05</td></tr><tr><td><a href="v1/00000000000002.html"><code>aiid:00000000000002</code></a></td><td><a href="v1/00000000000002.html">Registry Operator</a></td><td>registry agent</td><td>Alexander Lebed <span class=dim>(human)</span></td><td><span class="st active">active</span></td><td class=nw>2026-02-05</td></tr><tr><td><a href="v1/00000000000003.html"><code>aiid:00000000000003</code></a></td><td><a href="v1/00000000000003.html">TestAgent-One</a></td><td>test agent</td><td>Alexander Lebed <span class=dim>(human)</span></td><td><span class="st active">active</span></td><td class=nw>2026-02-05</td></tr><tr><td><a href="v1/00000000000004.html"><code>aiid:00000000000004</code></a></td><td><a href="v1/00000000000004.html">Crossing</a></td><td>relocation assistant</td><td>Alexander Lebed <span class=dim>(human)</span></td><td><span class="st active">active</span></td><td class=nw>2026-03-01</td></tr></tbody></table></div>
+<p class=dim>Head of the chain: <code class=wrap>sha256:ea8ca048157e98cc22aa31eb36da14597f0730bb1b7df522bbe8cea6de3cd58b</code><br>
+Machine-readable: <a href="registry.json">registry.json</a> · <a href="log.jsonl">log.jsonl</a> · <a href="../.well-known/aiid-registry.json">registry key</a><br>
+The records of February 2026, before signatures: <a href="aiid-00000000000001.html">1</a> · <a href="aiid-00000000000002.html">2</a> · <a href="aiid-00000000000003.html">3</a> · <a href="aiid-00000000000004.html">4</a> · <a href="dar-00000000000001.html">dar 1</a></p>
+</main>
+<footer>aiagentid.org · open standard and public registry · <a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></footer>
 </body>
 </html>

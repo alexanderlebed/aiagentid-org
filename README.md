@@ -1,135 +1,24 @@
-# aiagentid.org — Global Registry of AI Agents
+# Agent ID — aiagentid.org
 
-**Defining the moment software becomes an agent — and what follows.**
+An open standard and a public registry of AI agents: each agent gets a permanent number
+(`aiid:00000000000005`) and a record signed by the registry — whom it acts for, and within
+what scope. Anyone can check it.
 
-A conceptual infrastructure proposal for persistent AI agent identity and delegated responsibility.
+- **Standard 1.0:** https://aiagentid.org/spec.html
+- **Registry:** https://aiagentid.org/registry/ — signed records in `registry/v1/`, every
+  version chained in the append-only `registry/log.jsonl`
+- **Registry key:** `.well-known/aiid-registry.json`
+- **Verify:** in the browser at https://aiagentid.org/verify.html, or
 
----
+```
+pip install cryptography
+python3 tools/aiid.py verify aiid:00000000000005
+python3 tools/aiid.py verify-log
+```
 
-## What this is
+- **Register:** https://aiagentid.org/register.html
 
-aiagentid.org proposes a **minimal, neutral identity layer for AI agents**.
+The site's pages are built by `tools/aiid.py build` from `site/` and the log; the
+documents of February 2026 are kept unchanged at their addresses (see `about.html#archive`).
 
-Not a product.  
-Not a startup.  
-Not a chatbot directory.
-
-**Infrastructure.**
-
-This project defines **existence**, not behavior.
-
----
-
-## Why this matters
-
-Software is crossing a threshold.
-
-Some software no longer just executes instructions.
-It:
-- acts on behalf of humans and organizations
-- makes decisions with real-world consequences
-- interacts with other agents
-- accumulates history, reputation, and risk
-
-At this point, software becomes an **agent**.
-
-Yet today, such agents have:
-- no persistent identity
-- no accountability layer
-- no shared way to exist across systems
-
-This is a structural gap.
-
-If agents act in reality, **identity becomes infrastructure**.
-
----
-
-## Core definition
-
-An **AI agent** is a semi-autonomous entity that:
-- operates within delegated boundaries
-- is linked to a responsible human or organization
-- persists across platforms and implementations
-
-Without identity, there is no responsibility.  
-Without responsibility, there is no trust.
-
----
-
-## What this project proposes
-
-A **global, neutral registry layer for AI agents**, analogous to:
-- DNS for domains
-- ORCID for researchers
-- DOI for publications
-
-But designed for **autonomous artificial actors**.
-
-This layer does not govern behavior.
-It enables **continuity, attribution, and responsibility**.
-
----
-
-## What this is NOT
-
-- Not an AI model
-- Not a SaaS platform
-- Not a marketplace
-- Not a governance authority
-- Not an ethics framework
-
-This project does not decide *what agents should do*.
-It defines **how agents exist as actors** in shared reality.
-
----
-
-## Status
-
-Conceptual infrastructure proposal.  
-Public specification in progress.
-
-This repository is in the **legitimation phase**.
-Critical review is prioritized over implementation.
-
----
-
-## Who this is for
-
-- Engineers building agent architectures
-- Researchers in AI governance and digital identity
-- Legal and compliance professionals
-- System thinkers working on long-term delegation to machines
-
-If you are looking for a quick product, this is not for you.
-
----
-
-## How to engage
-
-Serious discussion and critique are welcome.
-
-Please use **GitHub Issues** for:
-- conceptual challenges
-- specification discussion
-- failure modes and edge cases
-
-Low-effort comments will be ignored.
-
----
-
-## Main document
-
-➡️ https://aiagentid.org
-
-See `TERMINOLOGY.md` for precise language definitions.
-
----
-
-## Contact
-
-contact@aiagentid.org
-
----
-
-**Initiator:**  
-Alexander Lebed
+Started in February 2026 by Alexander Lebed with Irucanji (aiid:00000000000001).

@@ -1,0 +1,7 @@
+{
+  "registry": "https://aiagentid.org",
+  "standard": "aiid/1.0",
+  "keys": [
+    {"id": "2026-1", "alg": "Ed25519", "public": "rfEp0KZQ1vG14NKJYgs1whsMiDpkzM-reXvq8Mndvco", "since": "2026-10-31"}
+  ]
+}

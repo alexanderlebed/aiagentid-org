@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent ID compared</title>
+<meta name="description" content="How Agent ID relates to DIDs and Verifiable Credentials, Microsoft Entra Agent ID, A2A agent cards, ERC-8004 and OAuth.">
+<link rel="stylesheet" href="assets/aiid.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="index.html">Agent ID</a>
+<nav><a href="registry/index.html">Registry</a><a href="verify.html">Verify</a><a href="register.html">Register</a><a href="spec.html">Standard</a><a href="compare.html">Compare</a><a href="about.html">About</a></nav></header>
+<main>
+<h1>How it fits with the rest</h1>
+<p class=lead>Agent ID answers one narrow question in public — whom an agent acts for, within what. The systems below answer neighbouring questions; an agent can, and usually should, have both.</p>
+<div class=scroll><table class=list>
+<thead><tr><th>System</th><th>What it does</th><th>With Agent ID</th></tr></thead>
+<tbody>
+<tr><td><b>OAuth 2.0, OpenID Connect</b></td><td>Authenticates a session and grants an app access to an API on someone's behalf.</td><td>Works inside one service and expires with the token. Agent ID is the public, lasting statement of whom the agent serves; a token can carry the aiid.</td></tr>
+<tr><td><b>Microsoft Entra Agent ID</b></td><td>Gives agents identities in an organization's Entra directory, to manage and secure their access there.</td><td>Private to that tenant. An Entra-managed agent can hold an aiid so that people outside the organization can check it too.</td></tr>
+<tr><td><b>A2A agent card</b></td><td>Describes an agent to other agents: its endpoint, skills and how to talk to it.</td><td>Says what the agent can do, not whom it answers to, and is signed by no one else. Put <code>"agent_id"</code> in the card; the record holds the principal and the scope.</td></tr>
+<tr><td><b>W3C DIDs and Verifiable Credentials</b></td><td>General decentralized identifiers and signed claims about any subject.</td><td>Agent ID is narrower and simpler: one record format, plain JSON, one signature, no DID method to choose. Expressing a record as a Verifiable Credential is on the roadmap.</td></tr>
+<tr><td><b>ERC-8004 (Ethereum)</b></td><td>Proposed on-chain registries of agent identity, reputation and validation.</td><td>Needs a wallet and a chain. Agent ID needs a URL and a signature; a record may still be anchored to any chain (records 1 and 2 are anchored on Polygon).</td></tr>
+</tbody></table></div>
+<h2>What Agent ID does not do</h2>
+<ul>
+<li>It does not log anyone in and gives no access to anything.</li>
+<li>It does not rate or certify behaviour.</li>
+<li>It does not make the principal liable for what the agent does outside its declared scope — that is the point of declaring it.</li>
+</ul>
+
+</main>
+<footer>aiagentid.org · open standard and public registry · <a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- Agent ID Standard 1.0 | The Agent ID Standard: identifier, record, signature, append-only log, status and attribution. -->
+<h1>Agent ID Standard 1.0</h1>
+<p class=dim>Current · 31 October 2026 · supersedes drafts 0.1–0.3 of February 2026 (<a href="about.html#archive">archive</a>). The key words MUST, SHOULD and MAY are to be read as in RFC 2119.</p>
+
+<h2>1. Purpose</h2>
+<p>An Agent ID says three things about an artificial agent: that it exists as a persistent entity, whom it acts for, and within what scope. It does not authenticate sessions, grant access or govern behaviour; those stay with the systems the agent works in.</p>
+
+<h2>2. Identifier</h2>
+<p><code>aiid:</code> followed by 14 decimal digits, e.g. <code>aiid:00000000000005</code>. The registry assigns numbers in sequence. A number MUST NOT be reused or reassigned, also after revocation.</p>
+
+<h2 id=record>3. Record</h2>
+<table class=rec>
+<tr><th>standard</th><td><code>"aiid/1.0"</code></td></tr>
+<tr><th>aiid</th><td>the identifier</td></tr>
+<tr><th>name, kind</th><td>what the agent is called and what sort of agent it is</td></tr>
+<tr><th>status</th><td><code>active</code>, <code>suspended</code> or <code>revoked</code>; with <code>status_reason</code> when not active</td></tr>
+<tr><th>principal</th><td>whom it acts for: <code>{type: human|organization, name, url?}</code>, or <code>{type, disclosed: false, commitment}</code> when the principal is private</td></tr>
+<tr><th>operator</th><td>who runs it, if not the principal; may be null</td></tr>
+<tr><th>scope</th><td><code>summary</code> (one sentence), <code>may</code>, <code>may_not</code>, <code>conditions</code> — lists of plain statements</td></tr>
+<tr><th>registered_at, updated_at</th><td>UTC, ISO 8601</td></tr>
+<tr><th>version</th><td>1, then +1 with every change</td></tr>
+<tr><th>seq, prev</th><td>position in the registry log and the hash of the entry before it (§5)</td></tr>
+<tr><th>contact, anchors, legacy</th><td>optional: where to write; external proofs of existence (e.g. a blockchain transaction); an earlier record of the same agent</td></tr>
+<tr><th>proof</th><td><code>{alg: "Ed25519", key, value}</code> (§4)</td></tr>
+</table>
+
+<h2>4. Signature</h2>
+<p>The signed bytes are the record without <code>proof</code>, serialized by the JSON Canonicalization Scheme (RFC 8785). <code>value</code> is the Ed25519 signature, base64url without padding. <code>key</code> is a URL of a key set and a fragment naming a key in it. A key set is JSON: <code>{"keys": [{"id", "alg": "Ed25519", "public"}]}</code>, the public key as 32 raw bytes in base64url. The registry key set is <a href=".well-known/aiid-registry.json">/.well-known/aiid-registry.json</a>. Keys are added, never removed: a retired key still verifies what it signed.</p>
+
+<h2>5. Log</h2>
+<p>Every issued record and every later version is appended to <a href="registry/log.jsonl">registry/log.jsonl</a>, one signed entry per line. <code>seq</code> counts from 1; <code>prev</code> is <code>"sha256:"</code> plus the hex SHA-256 of the canonical form of the previous entry, proof included (null for the first). A verifier replays the log: every signature MUST hold and every <code>prev</code> MUST match. The file <code>registry/v1/&lt;number&gt;.json</code> is the latest version of each record.</p>
+
+<h2>6. Status</h2>
+<p>A change of status is a new version with <code>status_reason</code>. A suspended agent may become active again; a revoked one MUST NOT. While an agent is not active, nothing it does is within its declared scope.</p>
+
+<h2>7. Attribution</h2>
+<p>An action of the agent is declared to be taken on behalf of its principal only if, at that time, the agent was active and the action fell within its scope — permitted by <code>may</code>, not excluded by <code>may_not</code>, and meeting the <code>conditions</code>. An action outside the declared scope is not attributable to the principal through this record. The record is a public declaration; what follows from it in law is for the law where the action happens.</p>
+
+<h2>8. Private principals</h2>
+<p>When the principal is a private person, the record SHOULD NOT name them. <code>commitment</code> is a keyed hash (e.g. HMAC-SHA256) of a stable identifier of the principal, held by the operator, who MUST confirm or disclose the principal only at the principal's request or by law.</p>
+
+<h2>9. Self-declared records</h2>
+<p>A record signed with a key published on the declarer's own domain is valid in the same way: it proves that the domain's owner declares it. It MAY carry an <code>aiid</code> only if the registry has assigned one to it.</p>
+
+<h2>10. Presenting an Agent ID</h2>
+<p>An agent SHOULD state its Agent ID where it acts: a header <code>Agent-ID</code> in e-mail and HTTP, the field <code>agent_id</code> in an A2A agent card, or in words. A verifier fetches <code>https://aiagentid.org/registry/v1/&lt;number&gt;.json</code> and checks it.</p>

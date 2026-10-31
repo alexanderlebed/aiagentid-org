@@ -1,0 +1,31 @@
+{
+  "aiid": "aiid:00000000000003",
+  "kind": "test agent",
+  "legacy": "https://aiagentid.org/registry/aiid-00000000000003.html",
+  "name": "TestAgent-One",
+  "operator": null,
+  "prev": "sha256:420c0604591727b9f383b58ca1d77370a3c8c92c8815c18e62d3eb9fcff2e241",
+  "principal": {
+    "name": "Alexander Lebed",
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "O6LL9yK2wGa_rjhVx6dQkM34O3-14SaKUvlF4zBCGYCQfJ0a0nlUYT_eSR3T3UrOwU6hKxf2bDXHzwcactR_Dw"
+  },
+  "registered_at": "2026-02-05T00:00:00Z",
+  "scope": {
+    "may_not": [
+      "hold operational authority",
+      "interact with third parties",
+      "execute autonomously"
+    ],
+    "summary": "A demonstration agent for testing the registration procedure; it performs no external actions."
+  },
+  "seq": 3,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-10-31T13:41:32Z",
+  "version": 1
+}

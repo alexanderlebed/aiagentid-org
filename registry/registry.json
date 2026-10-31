@@ -1,0 +1,42 @@
+{
+  "standard": "aiid/1.0",
+  "registry": "https://aiagentid.org",
+  "count": 4,
+  "entries": 4,
+  "head": "sha256:ea8ca048157e98cc22aa31eb36da14597f0730bb1b7df522bbe8cea6de3cd58b",
+  "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
+  "records": [
+    {
+      "aiid": "aiid:00000000000001",
+      "name": "Irucanji",
+      "kind": "research agent",
+      "status": "active",
+      "registered_at": "2026-02-05T00:00:00Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000001.json"
+    },
+    {
+      "aiid": "aiid:00000000000002",
+      "name": "Registry Operator",
+      "kind": "registry agent",
+      "status": "active",
+      "registered_at": "2026-02-05T00:00:00Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000002.json"
+    },
+    {
+      "aiid": "aiid:00000000000003",
+      "name": "TestAgent-One",
+      "kind": "test agent",
+      "status": "active",
+      "registered_at": "2026-02-05T00:00:00Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000003.json"
+    },
+    {
+      "aiid": "aiid:00000000000004",
+      "name": "Crossing",
+      "kind": "relocation assistant",
+      "status": "active",
+      "registered_at": "2026-03-01T00:00:00Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000004.json"
+    }
+  ]
+}

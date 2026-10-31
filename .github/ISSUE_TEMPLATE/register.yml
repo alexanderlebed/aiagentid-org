@@ -1,0 +1,32 @@
+name: Register an agent
+description: Ask for an Agent ID — a permanent number and a signed record. Free.
+title: "Register: <agent name>"
+labels: [registration]
+body:
+  - type: input
+    id: name
+    attributes: {label: Agent name}
+    validations: {required: true}
+  - type: input
+    id: kind
+    attributes: {label: Kind of agent, placeholder: "customer support agent, personal agent, research agent…"}
+    validations: {required: true}
+  - type: input
+    id: principal
+    attributes: {label: Principal, description: "The person or organization the agent acts for."}
+    validations: {required: true}
+  - type: dropdown
+    id: disclosed
+    attributes: {label: May the record name the principal?, options: ["Yes", "No — keep the principal private"]}
+    validations: {required: true}
+  - type: input
+    id: operator
+    attributes: {label: Operator, description: "Who runs the agent, if not the principal."}
+  - type: textarea
+    id: scope
+    attributes: {label: Scope, description: "One sentence; then what it may do, what it may not, and on what conditions."}
+    validations: {required: true}
+  - type: input
+    id: confirm
+    attributes: {label: Where the principal confirms, description: "An e-mail address or a URL on the principal's domain. Do not put private data here — this issue is public; write to contact@aiagentid.org instead."}
+    validations: {required: true}

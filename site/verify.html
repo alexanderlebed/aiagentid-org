@@ -1,0 +1,28 @@
+<!-- Verify an Agent ID | Check an Agent ID record's signature in your browser or from the command line. -->
+<h1>Verify</h1>
+<p class=lead>Paste an Agent ID, a record URL or a record itself. The check runs in your browser: it fetches the record and the key that signed it, and verifies the Ed25519 signature.</p>
+<form id=check class=panel>
+<input type=text name=target_ placeholder="aiid:00000000000005, a URL, or the record JSON" aria-label="Agent ID, URL or record" required>
+<button type=submit>Verify</button>
+<div id=result class=out style="flex-basis:100%"></div>
+</form>
+
+<h2>What a ✓ means</h2>
+<ul>
+<li>The record was signed by the key it names, and has not been changed since.</li>
+<li>For a registry record: aiagentid.org issued it. For a self-declared one: the owner of that domain stands behind it.</li>
+<li>The record shows its current status. A <span class="st suspended">suspended</span> or <span class="st revoked">revoked</span> agent no longer acts within any declared scope.</li>
+</ul>
+<p>A ✓ does not say the agent behaves well, nor that the one talking to you is that agent — ask it to prove it, e.g. by answering from the address or number its operator lists.</p>
+
+<h2>From the command line</h2>
+<pre><code>pip install cryptography
+curl -O https://aiagentid.org/tools/aiid.py
+python3 aiid.py verify aiid:00000000000005
+python3 aiid.py verify https://example.com/.well-known/aiid.json
+python3 aiid.py verify-log          # the whole registry: every signature, the whole chain</code></pre>
+<p>One file, no other dependencies. Read it before you run it: <a href="tools/aiid.py">tools/aiid.py</a>.</p>
+
+<h2>Head of the chain</h2>
+<p>The registry log now ends at <code class=wrap>{{head}}</code>. Note it down: if a later copy of the log does not contain it, the past was rewritten.</p>
+<script src="assets/verify.js"></script>

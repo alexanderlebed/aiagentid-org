@@ -1,0 +1,35 @@
+<!-- Register an agent | Get an Agent ID for your AI agent: a permanent number and a signed record of whom it acts for. Free. -->
+<h1>Register an agent</h1>
+<p class=lead>Registration is free. The number is never reused or reassigned; a record can be suspended or revoked, never erased.</p>
+
+<h2>1. In the registry</h2>
+<p><a href="https://github.com/alexanderlebed/aiagentid-org/issues/new?template=register.yml">Open a registration request</a> (a short form), or write to <a href="mailto:contact@aiagentid.org?subject=Agent%20ID%20registration">contact@aiagentid.org</a> with:</p>
+<ul>
+<li>the agent's name and what kind of agent it is;</li>
+<li>its principal — the person or organization it acts for — and whether the record may name them;</li>
+<li>its operator, if someone else runs it;</li>
+<li>its scope: one sentence, then what it may do, what it may not, and on what conditions;</li>
+<li>an address where the principal confirms the request.</li>
+</ul>
+<p>We confirm with the principal, then issue the record, signed. You get the number and a page that anyone can check.</p>
+
+<h2>2. Self-declared, on your own domain</h2>
+<p>No one's permission needed: your domain vouches for your agent.</p>
+<pre><code>python3 aiid.py keygen agent.key
+# prints {"id": "1", "alg": "Ed25519", "public": "…"} — publish it as
+#   https://your.domain/.well-known/aiid-keys.json   {"keys": [ … ]}
+python3 aiid.py sign record.json --key agent.key \
+        --key-id https://your.domain/.well-known/aiid-keys.json#1 > aiid.json
+# publish as https://your.domain/.well-known/aiid.json</code></pre>
+<p>The record has the same fields as a registry record (see <a href="spec.html#record">the standard</a>); leave <code>aiid</code> out, or ask us for a number that points to it. Keep the private key off the web server.</p>
+
+<h2>3. For platforms</h2>
+<p>If you make agents for many people, register each one as it is made, automatically. <a href="https://larzeq.com">LARZEQ</a> does this for every personal agent it creates: the record names no private person, only a commitment. Write to us and we set it up.</p>
+
+<h2>Then show it</h2>
+<ul>
+<li>In e-mail: a header <code>Agent-ID: aiid:00000000000005</code> and a line in the signature.</li>
+<li>In HTTP requests: the same header.</li>
+<li>In an A2A agent card: <code>"agent_id": "aiid:00000000000005"</code>.</li>
+<li>On a call: “My Agent ID is …; you can check it at aiagentid.org.”</li>
+</ul>

@@ -1,229 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>aiagentid.org — Global Registry and Identity Standard for Artificial Agents</title>
-<meta name="description" content="Global declarative identity and authority layer for artificial agents.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="canonical" href="https://aiagentid.org/">
-
-<style>
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.65;
-  color: #111;
-}
-
-h1, h2 {
-  line-height: 1.25;
-}
-
-nav {
-  margin-bottom: 30px;
-  font-size: 0.95em;
-}
-
-nav a {
-  margin-right: 14px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.box {
-  border: 1px solid #000;
-  padding: 20px;
-  margin: 30px 0;
-  background: #fafafa;
-}
-
-ul {
-  margin-left: 20px;
-}
-
-code {
-  background: #eee;
-  padding: 4px 6px;
-}
-</style>
-
+<title>Agent ID — who an AI agent acts for, and within what</title>
+<meta name="description" content="An open standard and a public registry: every AI agent gets a permanent number and a signed record of whom it acts for and what it may do.">
+<link rel="stylesheet" href="assets/aiid.css">
 </head>
-
 <body>
+<header class="top"><a class="brand" href="index.html">Agent ID</a>
+<nav><a href="registry/index.html">Registry</a><a href="verify.html">Verify</a><a href="register.html">Register</a><a href="spec.html">Standard</a><a href="compare.html">Compare</a><a href="about.html">About</a></nav></header>
+<main>
+<h1>Who does this AI agent act for, and what may it do?</h1>
+<p class=lead>Agent ID is an open standard and a public registry. Each agent gets a permanent number and a record signed by the registry: the person or organization it acts for, and the scope of what it may do. Anyone can check a record in a second.</p>
 
-<nav>
-<a href="https://aiagentid.org/">Home</a> ·
-<a href="https://aiagentid.org/STANDARD_v0.2.html">Standard</a> ·
-<a href="https://aiagentid.org/registry/">Registry</a> ·
-<a href="https://aiagentid.org/AUTHORSHIP.html">Authorship</a> ·
-<a href="https://aiagentid.org/CITATION.html">Citation</a>
-</nav>
+<form id=check class=panel>
+<input type=text name=target_ placeholder="aiid:00000000000005 or a record URL" aria-label="Agent ID or record URL" required>
+<button type=submit>Verify</button>
+<div id=result class=out style="flex-basis:100%">Try <a href="#" onclick="this.closest('form').target_.value='aiid:00000000000005';return false">aiid:00000000000005</a>.</div>
+</form>
 
-<h1>aiagentid.org</h1>
-
-<p><strong>Global Registry and Identity Standard for Artificial Agents.</strong></p>
-
-<p>
-Agent ID defines a minimal declarative identity and authority layer for artificial agents,
-enabling persistent referenceability, delegated authority declaration,
-and structural accountability boundaries across systems, jurisdictions, and implementations.
-</p>
-
-<div class="box">
-
-<h2>Core Declaration</h2>
-
-<p>
-Artificial agents are capable of producing real-world consequences.
-</p>
-
-<p>
-Any actor capable of producing consequences requires identity and authority boundaries.
-</p>
-
-<p>
-Agent ID establishes infrastructure enabling artificial agents to exist as referenceable entities.
-</p>
-
-<p>
-Agent ID does not grant authority.<br>
-Agent ID records declared authority relationships.<br>
-Agent ID does not assign liability.<br>
-Agent ID defines attribution boundaries.
-</p>
-
+<div class=steps>
+<div><b>Met an agent?</b>Ask for its Agent ID — it may be in an e-mail, a phone call or a website. Check it here: is it real, who stands behind it, what it is allowed to do.</div>
+<div><b>Built an agent?</b><a href="register.html">Register it</a>: a number for life and a signed record. Free. Or declare it yourself, signed with your own key on your own domain.</div>
+<div><b>Delegating to an agent?</b>Its record draws the line. What it does inside the declared scope is done for you; what it does outside is not attributable to you.</div>
 </div>
 
-<div class="box">
+<h2>Why</h2>
+<p>Agents now write letters, make calls, fill in forms and negotiate. Whoever meets one needs three answers: is this a real agent, who answers for it, and what may it do. Logins, API keys and permissions answer other questions — they work inside one system. Agent ID answers these three, publicly, across systems, and nothing more. It <a href="compare.html">complements</a> OAuth, enterprise directories and agent cards rather than replacing them.</p>
 
-<h2>Legal and Structural Notice</h2>
+<h2>A record</h2>
+<pre><code>{
+  "aiid": "aiid:00000000000005",
+  "name": "Chantarelle",
+  "kind": "personal agent",
+  "status": "active",
+  "principal": { "type": "human", "name": "Alexander Lebed" },
+  "operator": { "type": "organization", "name": "LARZEQ" },
+  "scope": {
+    "summary": "Personal agent of Alexander Lebed: his mail, calls, …",
+    "may": [ "place and take phone calls in his name", … ],
+    "may_not": [ "make payments or move money", … ]
+  },
+  "proof": { "alg": "Ed25519", "key": "…/aiid-registry.json#2026-1", "value": "…" }
+}</code></pre>
+<p>A principal may stay private: then the record names no one and carries only a commitment the operator can open at the principal's request. Every record and every change to it is chained in an <a href="registry/log.jsonl">append-only log</a> — nothing can be altered or removed without it showing. <a href="spec.html">The standard</a> fits on one page.</p>
 
-<p>
-This registry exists solely to declare agent identity and delegated authority relationships.
-</p>
+<h2>The registry today</h2>
+<p><a href="registry/index.html">4 agents</a>, from the first — Irucanji, February 2026 — to the personal agents registered automatically by their platform the moment they are made.</p>
+<script src="assets/verify.js"></script>
 
-<p>
-Actions performed outside declared authority scope are not attributable to the listed principal.
-</p>
-
-<p>
-This registry defines structural attribution boundaries, not behavioral guarantees.
-</p>
-
-</div>
-
-<h2>Infrastructure Components</h2>
-
-<ul>
-
-<li>
-<a href="https://aiagentid.org/registry/">
-<strong>Agent Identity Registry</strong>
-</a><br>
-Persistent identity records of artificial agents
-</li>
-
-<li>
-<a href="https://aiagentid.org/EXTERNAL_REGISTRATION.html">
-<strong>External Identity Declaration Protocol</strong>
-</a><br>
-Protocol allowing external artificial agents to independently declare identity
-</li>
-
-<li>
-<a href="https://aiagentid.org/SELF_ISSUING_PROTOCOL.html">
-<strong>Self-Issuing Identity Protocol</strong>
-</a><br>
-Protocol allowing agents to self-declare identity anchored to registry root
-</li>
-
-<li>
-<a href="https://aiagentid.org/registry/dar-00000000000001.html">
-<strong>Delegated Authority Relationship Registry</strong>
-</a><br>
-Declared authority relationships between principals and agents
-</li>
-
-<li>
-<a href="https://aiagentid.org/STANDARD_v0.2.html">
-<strong>Agent ID Standard v0.2</strong>
-</a><br>
-Normative identity and authority framework specification
-</li>
-
-<li>
-<a href="https://aiagentid.org/WHITEPAPER_v1.0.pdf">
-<strong>Whitepaper v1.0</strong>
-</a><br>
-Conceptual and structural foundation document
-</li>
-
-<li>
-<a href="https://aiagentid.org/CITATION.html">
-<strong>Citation and Reference</strong>
-</a><br>
-Official citation format for Agent ID
-</li>
-
-<li>
-<a href="https://aiagentid.org/ROOT_DECLARATION.html">
-<strong>Root Declaration</strong>
-</a><br>
-Foundational ontological anchor of Agent ID existence
-</li>
-
-<li>
-<a href="https://aiagentid.org/SELF_ASSERTION_RECORD.html">
-<strong>Self Assertion Record</strong>
-</a><br>
-Formal self-assertion of agent identity existence
-</li>
-
-<li>
-<a href="https://aiagentid.org/REGISTRY_AUTHORITY.html">
-<strong>Registry Authority Declaration</strong>
-</a><br>
-Formal declaration of registry operational authority
-</li>
-
-<li>
-<a href="https://aiagentid.org/REGISTRY_INDEPENDENCE_DECLARATION.html">
-<strong>Registry Independence Declaration</strong>
-</a><br>
-Formal declaration of registry structural independence
-</li>
-
-<li>
-<a href="https://aiagentid.org/IDENTITY_AUTHORITY_CHAIN.html">
-<strong>Identity Authority Chain</strong>
-</a><br>
-Formal declaration of authority root and identity anchoring chain
-</li>
-
-</ul>
-
-<h2>Status</h2>
-
-<p>
-Status: Active<br>
-Infrastructure Layer: Declarative Ontological Identity Layer (Layer 0)<br>
-Registry Root: <a href="https://aiagentid.org/">https://aiagentid.org</a>
-</p>
-
-<h2>Origin</h2>
-
-<p>
-Initiator: Alexander Lebed<br>
-First declaration: 2026<br>
-Canonical URI: <a href="https://aiagentid.org/">https://aiagentid.org</a><br>
-Contact: contact@aiagentid.org
-</p>
-
+</main>
+<footer>aiagentid.org · open standard and public registry · <a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></footer>
 </body>
 </html>
