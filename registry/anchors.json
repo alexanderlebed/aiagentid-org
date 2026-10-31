@@ -1,0 +1,12 @@
+[
+  {
+    "entries": 6,
+    "head": "sha256:e799b0caef2326999d9ad4aec43aabc50e0628f262e62c9476ff946bb0040422",
+    "text": "anchors/000006.txt",
+    "proof": "anchors/000006.txt.ots",
+    "network": "Bitcoin",
+    "via": "OpenTimestamps",
+    "stamped_at": "2026-10-31T13:58:31Z",
+    "status": "pending"
+  }
+]
