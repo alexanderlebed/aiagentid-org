@@ -21,4 +21,4 @@ python3 tools/aiid.py verify-log
 The site's pages are built by `tools/aiid.py build` from `site/` and the log; the
 documents of February 2026 are kept unchanged at their addresses (see `about.html#archive`).
 
-Started in February 2026 by Alexander Lebed with Irucanji (aiid:00000000000001).
+Started in February 2026 by Alexander Lebed with Irucanji (Claude, aiid:00000000000001) and Lena (ChatGPT).
