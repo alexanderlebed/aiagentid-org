@@ -30,6 +30,8 @@
 <h2>5. Log</h2>
 <p>Every issued record and every later version is appended to <a href="registry/log.jsonl">registry/log.jsonl</a>, one signed entry per line. <code>seq</code> counts from 1; <code>prev</code> is <code>"sha256:"</code> plus the hex SHA-256 of the canonical form of the previous entry, proof included (null for the first). A verifier replays the log: every signature MUST hold and every <code>prev</code> MUST match. The file <code>registry/v1/&lt;number&gt;.json</code> is the latest version of each record.</p>
 
+<p>The registry SHOULD anchor the head of the log in a public blockchain, so that its past cannot be rewritten even by the registry. aiagentid.org stamps each new head in Bitcoin through <a href="https://opentimestamps.org">OpenTimestamps</a>: the file <code>registry/anchors/&lt;entries&gt;.txt</code> holds the head, <code>.ots</code> beside it the proof, <a href="registry/anchors.json">registry/anchors.json</a> lists them. One anchor covers every entry up to it.</p>
+
 <h2>6. Status</h2>
 <p>A change of status is a new version with <code>status_reason</code>. A suspended agent may become active again; a revoked one MUST NOT. While an agent is not active, nothing it does is within its declared scope.</p>
 

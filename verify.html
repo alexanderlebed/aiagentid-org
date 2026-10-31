@@ -35,6 +35,9 @@ python3 aiid.py verify https://example.com/.well-known/aiid.json
 python3 aiid.py verify-log          # the whole registry: every signature, the whole chain</code></pre>
 <p>One file, no other dependencies. Read it before you run it: <a href="tools/aiid.py">tools/aiid.py</a>.</p>
 
+<h2>In Bitcoin</h2>
+<p>Each head of the chain is stamped in the Bitcoin blockchain through OpenTimestamps — no one, the registry included, can then pretend the log was different. To check: take a record's <i>proof</i> link (an <code>.ots</code> file) and the <code>.txt</code> beside it, and drop both on <a href="https://opentimestamps.org">opentimestamps.org</a>; or run <code>ots verify</code> from the <a href="https://github.com/opentimestamps/opentimestamps-client">OpenTimestamps client</a>. The text in the <code>.txt</code> must equal the head that <code>aiid.py verify-log</code> computes.</p>
+
 <h2>Head of the chain</h2>
 <p>The registry log now ends at <code class=wrap>sha256:e799b0caef2326999d9ad4aec43aabc50e0628f262e62c9476ff946bb0040422</code>. Note it down: if a later copy of the log does not contain it, the past was rewritten.</p>
 <script src="assets/verify.js"></script>

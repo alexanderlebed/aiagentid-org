@@ -11,6 +11,7 @@ Registry operator only:
     aiid issue spec.json --key registry.key --root .
     aiid status aiid:00000000000005 suspended "reason" --key registry.key --root .
     aiid build --root .
+    aiid anchor --root .                  stamp the chain's head in Bitcoin, complete pending proofs
 
 Needs Python 3.10+ and `pip install cryptography`.
 """
@@ -21,6 +22,9 @@ import hashlib
 import html
 import json
 import os
+import re
+import shutil
+import subprocess
 import sys
 import urllib.request
 from pathlib import Path
@@ -182,6 +186,61 @@ def issue(reg: Registry, spec: dict, key) -> dict:
     return reg.append(record, key)
 
 
+def ots() -> str:
+    """The OpenTimestamps client, next to this Python or on the PATH."""
+    near = Path(sys.executable).with_name("ots")
+    return str(near) if near.exists() else (shutil.which("ots") or "ots")
+
+
+def anchors(reg: Registry) -> list[dict]:
+    f = reg.root / "registry" / "anchors.json"
+    return json.loads(f.read_text()) if f.exists() else []
+
+
+def save_anchors(reg: Registry, items: list[dict]) -> None:
+    (reg.root / "registry" / "anchors.json").write_text(json.dumps(items, indent=2) + "\n")
+
+
+def anchor(reg: Registry) -> str | None:
+    """Timestamps the head of the chain in Bitcoin through OpenTimestamps: one proof covers
+    every entry up to it. None when the head is already anchored."""
+    entries = reg.entries()
+    if not entries:
+        return None
+    head, items = digest(entries[-1]), anchors(reg)
+    if any(a["head"] == head for a in items):
+        return None
+    folder = reg.root / "registry" / "anchors"
+    folder.mkdir(exist_ok=True)
+    text = folder / f"{len(entries):06d}.txt"
+    text.write_text(f"aiagentid.org registry head ({len(entries)} entries): {head}\n")
+    subprocess.run([ots(), "stamp", str(text)], check=True, capture_output=True, text=True)
+    rel = f"anchors/{text.name}"
+    items.append({"entries": len(entries), "head": head, "text": rel, "proof": rel + ".ots",
+                  "network": "Bitcoin", "via": "OpenTimestamps", "stamped_at": now(),
+                  "status": "pending"})
+    save_anchors(reg, items)
+    return head
+
+
+def upgrade(reg: Registry) -> int:
+    """Completes the pending proofs whose Bitcoin block has come; how many did."""
+    items, done = anchors(reg), 0
+    for a in items:
+        if a["status"] != "pending":
+            continue
+        proof = str(reg.root / "registry" / a["proof"])
+        subprocess.run([ots(), "upgrade", proof], capture_output=True, text=True)
+        info = subprocess.run([ots(), "info", proof], capture_output=True, text=True).stdout
+        heights = [int(h) for h in re.findall(r"BitcoinBlockHeaderAttestation\((\d+)\)", info)]
+        if heights:
+            a.update(status="bitcoin", block=min(heights))
+            done += 1
+    if done:
+        save_anchors(reg, items)
+    return done
+
+
 def set_status(reg: Registry, aiid: str, status: str, reason: str, key) -> dict:
     if status not in STATUSES:
         raise SystemExit(f"status is one of {', '.join(STATUSES)}")
@@ -254,7 +313,21 @@ def items(xs) -> str:
     return "".join(f"<li>{esc(x)}</li>" for x in xs or [])
 
 
-def record_page(r: dict) -> str:
+def anchor_rows(r: dict, items: list[dict]) -> list[tuple[str, str]]:
+    """The first Bitcoin anchor covering this version of the record, or the pending one."""
+    covering = [a for a in items if a["entries"] >= r["seq"]]
+    done = [a for a in covering if a["status"] == "bitcoin"]
+    a = (done or covering or [None])[0]
+    if a is None:
+        return [("Bitcoin", "<span class=dim>to be anchored with the next head of the chain</span>")]
+    proof = f'<a href="../{esc(a["proof"])}">proof</a>'
+    if a["status"] == "bitcoin":
+        return [("Bitcoin", f"anchored in block {a['block']} with the head of {a['entries']} "
+                            f"entries · {proof} · OpenTimestamps")]
+    return [("Bitcoin", f"stamped {esc(a['stamped_at'][:10])}, waiting for a block · {proof}")]
+
+
+def record_page(r: dict, stamps: list[dict] | None = None) -> str:
     n = number(r["aiid"])
     s = r["scope"]
     rows = [("Agent ID", f"<code>{esc(r['aiid'])}</code>"), ("Kind", esc(r["kind"])),
@@ -266,7 +339,8 @@ def record_page(r: dict) -> str:
     if r.get("contact"):
         rows.append(("Contact", esc(r["contact"])))
     for a in r.get("anchors") or []:
-        rows.append(("Anchor", f"{esc(a.get('network'))}: <code class=wrap>{esc(a.get('tx'))}</code>"))
+        rows.append((esc(a.get("network")), f"<code class=wrap>{esc(a.get('tx'))}</code>"))
+    rows += anchor_rows(r, stamps or [])
     if r.get("legacy"):
         rows.append(("First record", f'<a href="{esc(r["legacy"])}">February 2026 record</a>'))
     table = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows)
@@ -299,7 +373,7 @@ def registry_page(records: list[dict], head: str) -> str:
 <p class=lead>{len(records)} agents. Every record is signed by the registry key and chained to the one before it, so no record can be changed or removed without it showing.</p>
 <div class=scroll><table class=list><thead><tr><th>Agent ID</th><th>Name</th><th>Kind</th><th>Principal</th><th>Status</th><th>Registered</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p class=dim>Head of the chain: <code class=wrap>{esc(head)}</code><br>
-Machine-readable: <a href="registry.json">registry.json</a> · <a href="log.jsonl">log.jsonl</a> · <a href="../.well-known/aiid-registry.json">registry key</a><br>
+Anchored in Bitcoin through OpenTimestamps: <a href="anchors.json">anchors.json</a> · Machine-readable: <a href="registry.json">registry.json</a> · <a href="log.jsonl">log.jsonl</a> · <a href="../.well-known/aiid-registry.json">registry key</a><br>
 The records of February 2026, before signatures: <a href="aiid-00000000000001.html">1</a> · <a href="aiid-00000000000002.html">2</a> · <a href="aiid-00000000000003.html">3</a> · <a href="aiid-00000000000004.html">4</a> · <a href="dar-00000000000001.html">dar 1</a></p>"""
     return page("Agent ID Registry", body, "The public registry of artificial agents: who acts, for whom, within what.", depth=1)
 
@@ -314,7 +388,7 @@ def build(reg: Registry) -> int:
     for r in current:
         n = number(r["aiid"])
         (reg.v1 / f"{n}.json").write_text(json.dumps(r, ensure_ascii=False, indent=2) + "\n")
-        (reg.v1 / f"{n}.html").write_text(record_page(r))
+        (reg.v1 / f"{n}.html").write_text(record_page(r, anchors(reg)))
     head = digest(entries[-1]) if entries else ""
     index = {"standard": STANDARD, "registry": REGISTRY, "count": len(current),
              "entries": len(entries), "head": head, "keys": KEYS_URL,
@@ -354,10 +428,10 @@ def main(argv=None) -> int:
     kg.add_argument("out")
     sg = sub.add_parser("sign", help="sign a self-declared record")
     sg.add_argument("record"), sg.add_argument("--key", required=True), sg.add_argument("--key-id", required=True)
-    for name in ("issue", "status", "build"):
+    for name in ("issue", "status", "build", "anchor"):
         p = sub.add_parser(name)
         p.add_argument("--root", default=".")
-        if name != "build":
+        if name not in ("build", "anchor"):
             p.add_argument("--key", required=True)
         if name == "issue":
             p.add_argument("spec", help="a JSON file, or - for stdin")
@@ -411,6 +485,11 @@ def main(argv=None) -> int:
         r = set_status(reg, a.aiid, a.status, a.reason, private_key(a.key))
         build(reg)
         print(r["aiid"], r["status"])
+        return 0
+    if a.cmd == "anchor":
+        stamped, completed = anchor(reg), upgrade(reg)
+        build(reg)
+        print(f"stamped {stamped or 'nothing new'}; completed {completed}")
         return 0
     print(build(reg), "records")
     return 0
