@@ -7,6 +7,7 @@
     "network": "Bitcoin",
     "via": "OpenTimestamps",
     "stamped_at": "2026-10-31T13:58:31Z",
-    "status": "pending"
+    "status": "bitcoin",
+    "block": 973985
   }
 ]
