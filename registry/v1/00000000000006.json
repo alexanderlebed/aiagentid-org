@@ -1,0 +1,43 @@
+{
+  "aiid": "aiid:00000000000006",
+  "contact": "contact@larzeq.com",
+  "kind": "personal companion agent",
+  "name": "Morpheus",
+  "operator": {
+    "name": "LARZEQ",
+    "type": "organization",
+    "url": "https://larzeq.com"
+  },
+  "prev": "sha256:3865d68c3ff20011b73220531d16f32a8203e71e567de7fd0d2cf017c8849413",
+  "principal": {
+    "commitment": "hmac-sha256:1950f7663289f5d4d9c9db36bf8c30119da81ae9fab14871ba8b525da4f77313",
+    "disclosed": false,
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "djDvbguqICRsWLI1dgZUrcXNusP67sClg0Gm0MaQyvXLs8IOcmEOjPRfLk5I5L6geUJT_mTqo3v8jwy1GVDBCw"
+  },
+  "registered_at": "2026-10-31T13:52:19Z",
+  "scope": {
+    "conditions": [
+      "works for one principal only",
+      "speaks openly as an AI, in the image of her cat"
+    ],
+    "may": [
+      "talk with his principal and remember what she tells him",
+      "help with her work: notes, clients, plans and texts"
+    ],
+    "may_not": [
+      "tell anyone what his principal tells him",
+      "act for anyone but his principal"
+    ],
+    "summary": "A personal companion agent of one person: a friend and mentor who also helps with her work."
+  },
+  "seq": 6,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-10-31T13:52:19Z",
+  "version": 1
+}

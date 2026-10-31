@@ -1,9 +1,9 @@
 {
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
-  "count": 5,
-  "entries": 5,
-  "head": "sha256:3865d68c3ff20011b73220531d16f32a8203e71e567de7fd0d2cf017c8849413",
+  "count": 6,
+  "entries": 6,
+  "head": "sha256:e799b0caef2326999d9ad4aec43aabc50e0628f262e62c9476ff946bb0040422",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -45,6 +45,14 @@
       "status": "active",
       "registered_at": "2026-10-31T13:46:35Z",
       "url": "https://aiagentid.org/registry/v1/00000000000005.json"
+    },
+    {
+      "aiid": "aiid:00000000000006",
+      "name": "Morpheus",
+      "kind": "personal companion agent",
+      "status": "active",
+      "registered_at": "2026-10-31T13:52:19Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000006.json"
     }
   ]
 }
