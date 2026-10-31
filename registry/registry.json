@@ -1,9 +1,9 @@
 {
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
-  "count": 4,
-  "entries": 4,
-  "head": "sha256:ea8ca048157e98cc22aa31eb36da14597f0730bb1b7df522bbe8cea6de3cd58b",
+  "count": 5,
+  "entries": 5,
+  "head": "sha256:3865d68c3ff20011b73220531d16f32a8203e71e567de7fd0d2cf017c8849413",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -37,6 +37,14 @@
       "status": "active",
       "registered_at": "2026-03-01T00:00:00Z",
       "url": "https://aiagentid.org/registry/v1/00000000000004.json"
+    },
+    {
+      "aiid": "aiid:00000000000005",
+      "name": "Chantarelle",
+      "kind": "personal agent",
+      "status": "active",
+      "registered_at": "2026-10-31T13:46:35Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000005.json"
     }
   ]
 }

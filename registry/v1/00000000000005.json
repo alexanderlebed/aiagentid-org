@@ -1,0 +1,47 @@
+{
+  "aiid": "aiid:00000000000005",
+  "contact": "contact@larzeq.com",
+  "kind": "personal agent",
+  "name": "Chantarelle",
+  "operator": {
+    "name": "LARZEQ",
+    "type": "organization",
+    "url": "https://larzeq.com"
+  },
+  "prev": "sha256:ea8ca048157e98cc22aa31eb36da14597f0730bb1b7df522bbe8cea6de3cd58b",
+  "principal": {
+    "name": "Alexander Lebed",
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "Lbt9zxushVSUkYNYBb0yFNEaIGm-D0Kl1RzOwpHkpKVmvn1eAcOOb_jDzb5eTUPpvk3T6x8kBK5k1RUgBaB_AA"
+  },
+  "registered_at": "2026-10-31T13:46:35Z",
+  "scope": {
+    "conditions": [
+      "acts only within what Alexander Lebed has delegated",
+      "an action outside this scope is not attributable to him",
+      "every action is recorded in a journal that cannot be rewritten"
+    ],
+    "may": [
+      "write and answer mail in his name",
+      "place and take phone calls in his name",
+      "keep his calendar and reminders",
+      "use websites on his behalf",
+      "prepare documents, letters and calculations"
+    ],
+    "may_not": [
+      "make payments or move money",
+      "sign contracts",
+      "act for anyone but Alexander Lebed"
+    ],
+    "summary": "Personal agent of Alexander Lebed: his mail, calls, calendar, documents, websites and errands."
+  },
+  "seq": 5,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-10-31T13:46:35Z",
+  "version": 1
+}
