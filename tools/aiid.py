@@ -274,6 +274,12 @@ def esc(v) -> str:
     return html.escape(str(v if v is not None else ""))
 
 
+#: Changes whenever the stylesheet does, so a browser never shows new pages with old styles.
+ASSETS_V = hashlib.sha256((Path(__file__).resolve().parent.parent / "assets" / "aiid.css")
+                          .read_bytes()).hexdigest()[:8] if (Path(__file__).resolve().parent.parent
+                                                            / "assets" / "aiid.css").exists() else "1"
+
+
 def page(title: str, body: str, desc: str = "", depth: int = 0) -> str:
     up = "../" * depth
     return f"""<!doctype html>
@@ -283,15 +289,20 @@ def page(title: str, body: str, desc: str = "", depth: int = 0) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<link rel="stylesheet" href="{up}assets/aiid.css">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:site_name" content="Agent ID · aiagentid.org">
+<meta name="theme-color" content="#1f4fd1">
+<link rel="icon" href="{up}assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{up}assets/aiid.css?v={ASSETS_V}">
 </head>
 <body>
-<header class="top"><a class="brand" href="{up}index.html">Agent ID</a>
+<header class="top"><a class="brand" href="{up}index.html"><img src="{up}assets/mark.svg" alt="" width="22" height="22">Agent ID</a>
 <nav><a href="{up}registry/index.html">Registry</a><a href="{up}verify.html">Verify</a><a href="{up}register.html">Register</a><a href="{up}spec.html">Standard</a><a href="{up}compare.html">Compare</a><a href="{up}about.html">About</a></nav></header>
 <main>
 {body}
 </main>
-<footer>aiagentid.org · open standard and public registry · <a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></footer>
+<footer><span>aiagentid.org · open standard and public registry · <a href="{up}spec.html">Standard 1.0</a></span><span><a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></span></footer>
 </body>
 </html>
 """
@@ -344,10 +355,12 @@ def record_page(r: dict, stamps: list[dict] | None = None) -> str:
     if r.get("legacy"):
         rows.append(("First record", f'<a href="{esc(r["legacy"])}">February 2026 record</a>'))
     table = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows)
-    lists = ""
-    for label, key in (("May", "may"), ("May not", "may_not"), ("Conditions", "conditions")):
-        if s.get(key):
-            lists += f"<h3>{label}</h3><ul>{items(s[key])}</ul>"
+    cols = "".join(f'<div class="col {key}"><h3>{label}</h3><ul>{items(s[key])}</ul></div>'
+                   for label, key in (("May", "may"), ("May not", "may_not"))
+                   if s.get(key))
+    lists = f'<div class=scope>{cols}</div>' if cols else ""
+    if s.get("conditions"):
+        lists += f"<h3>Conditions</h3><ul>{items(s['conditions'])}</ul>"
     body = f"""<p class=crumb><a href="../index.html">Registry</a> / {esc(r['aiid'])}</p>
 <h1>{esc(r['name'])}</h1>
 <p class=lead>{esc(s.get('summary', ''))}</p>
@@ -359,7 +372,7 @@ def record_page(r: dict, stamps: list[dict] | None = None) -> str:
 {lists}
 <h2>Machine-readable</h2>
 <p><a href="{n}.json">{n}.json</a> — signed by the registry key, sequence {r['seq']} in the <a href="../log.jsonl">append-only log</a>.</p>
-<script src="../../assets/verify.js"></script>"""
+<script src="../../assets/verify.js?v=2"></script>"""
     return page(f"{r['name']} — {r['aiid']}", body, s.get("summary", ""), depth=2)
 
 
@@ -403,7 +416,16 @@ def build(reg: Registry) -> int:
         first, _, body = src.read_text().partition("\n")
         title, _, desc = first.strip().removeprefix("<!--").removesuffix("-->").partition("|")
         body = body.replace("{{count}}", str(len(current))).replace("{{head}}", esc(head))
-        (reg.root / src.name).write_text(page(title.strip(), body, desc.strip()))
+        out = page(title.strip(), body, desc.strip())
+        if src.name == "404.html":   # served at any depth: its links must start at the root
+            out = re.sub(r'(href|src)="(?!https?:|mailto:|#|/)', r'\1="/', out)
+        (reg.root / src.name).write_text(out)
+    pages = [p.name for p in sorted((reg.root / "site").glob("*.html")) if p.name != "404.html"]
+    urls = ([f"{REGISTRY}/{p}" for p in pages] + [f"{REGISTRY}/registry/index.html"]
+            + [f"{REGISTRY}/registry/v1/{number(r['aiid'])}.html" for r in current])
+    (reg.root / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"<url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n")
     return len(current)
 
 

@@ -1,116 +1,22 @@
 # Roadmap
 
-This roadmap does not describe a product timeline.
+Where Agent ID stands, and what comes next. Nothing below is promised by a date.
 
-It describes conceptual maturation stages of an identity infrastructure
-for artificial agents.
+## Done — Standard 1.0 (October 2026)
 
-Dates are intentionally omitted.
-Progress is measured by clarity, not velocity.
+- One-page standard: identifier, record, signature, log, status, attribution, private principals, self-declared records, how an agent presents its ID.
+- A public registry at aiagentid.org: signed records, an append-only log, the head anchored in Bitcoin.
+- Verification by anyone, in the browser or with one open script (`tools/aiid.py`).
+- The first platform registering its agents automatically (LARZEQ).
 
----
+## Next
 
-## Phase 0 — Question Articulation (Completed)
+1. **Agents present their ID where they act.** E-mail header `Agent-ID`, the A2A agent card field `agent_id`.
+2. **Proof that the agent in front of you is the registered one.** Today a ✓ proves the record, not the speaker. The direction: records list the channels the agent speaks from (addresses, domains), so a letter signed by its domain (DKIM) and carrying its ID can be matched to the record.
+3. **A Verifiable Credential form of the record**, for systems built on W3C VCs.
+4. **More than one operator.** Other platforms registering their agents; registries other than aiagentid.org following the same format.
+5. **Independent stewardship** of the standard and the registry key (see GOVERNANCE.md).
 
-Goal:
-Formulate the problem space clearly enough that it cannot be ignored.
+## Not planned
 
-Status:
-- Persistent agent identity defined as a missing layer
-- Responsibility and delegation framed as core constraints
-- Scope explicitly limited to identity, not behavior or ethics
-
-Outcome:
-A shared language for discussing AI agents as actors rather than tools.
-
----
-
-## Phase 1 — Conceptual Stabilization (Current)
-
-Goal:
-Prevent premature solutioning while strengthening conceptual coherence.
-
-Focus:
-- Clarifying what an "agent" is and is not
-- Distinguishing identity from implementation
-- Stress-testing assumptions through critique
-- Identifying boundary cases (legal, technical, social)
-
-Deliverables:
-- Public discussion via issues
-- Minimal governance framework
-- Conceptual examples (non-normative)
-
-Non-Goals:
-- No reference implementation
-- No protocol specification
-- No commercial positioning
-
----
-
-## Phase 2 — Pre-Standard Exploration (Future)
-
-Goal:
-Explore whether a shared minimal standard is desirable and possible.
-
-Focus:
-- Identity syntax and persistence semantics
-- Delegation and responsibility linkage models
-- Interoperability constraints across platforms
-- Compatibility with legal and regulatory frameworks
-
-Possible Outputs:
-- Draft specification (non-binding)
-- Comparison with existing identity systems
-- Academic or policy-oriented whitepaper
-
-Participation:
-- Researchers
-- Infrastructure engineers
-- Legal and governance experts
-
----
-
-## Phase 3 — Institutional Pathfinding (Conditional)
-
-Goal:
-Determine appropriate long-term stewardship.
-
-Exploration of:
-- Working group formation
-- Neutral foundation hosting
-- Academic or standards-body affiliation
-
-Constraints:
-- No single-vendor ownership
-- No platform lock-in
-- No monetization of identity itself
-
-This phase only proceeds if earlier phases demonstrate necessity.
-
----
-
-## Phase 4 — Adoption Without Capture (Open)
-
-Goal:
-Allow usage without central control.
-
-Principles:
-- Voluntary adoption
-- Forkability
-- Backward compatibility
-- Clear separation between identity and enforcement
-
-Success is defined as:
-The concept being useful even if this repository becomes irrelevant.
-
----
-
-## Summary
-
-This roadmap assumes that identity infrastructure emerges slowly,
-through restraint rather than acceleration.
-
-The objective is not to win a market,
-but to make a missing layer legible enough
-that others can responsibly build upon it.
+Rating or certifying behaviour; logging anyone in or granting access; anything that needs a wallet or a particular blockchain.

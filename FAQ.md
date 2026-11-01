@@ -1,142 +1,33 @@
 # FAQ
 
-This FAQ is not meant to explain the project to everyone.
+## What is Agent ID?
 
-It exists to clarify boundaries, prevent misinterpretation,
-and answer the questions that arise from serious engagement.
+An open standard and a public registry. Each AI agent gets a permanent number (`aiid:` and 14 digits) and a record signed by the registry: whom it acts for, who runs it, what it may and may not do, and whether it is active.
 
----
+## Is the registry live?
 
-## Is this a product or a startup?
+Yes. Standard 1.0 and the registry have been live since 31 October 2026. Every record is signed, every change is in an append-only log, and the head of the log is anchored in Bitcoin. Check any record at <https://aiagentid.org/verify.html>.
 
-No.
+## Does a ✓ mean I can trust the agent?
 
-aiagentid.org is not a product, a service, or a company.
-There is no roadmap toward monetization, user acquisition, or feature delivery.
+It means the record is genuine and unchanged, and shows its current status. It does not rate the agent's behaviour, and it does not prove that the one talking to you is that agent. Ask it to answer from an address or number its operator lists.
 
-It is a conceptual infrastructure proposal.
-Its value lies in framing a missing layer, not in shipping software.
+## Why not OAuth, API keys or accounts?
 
----
+They grant access inside one system. Agent ID answers a different question, in public and across systems: whom the agent acts for, and within what. The two work together. See <https://aiagentid.org/compare.html>.
 
-## Is this another AI ethics framework?
+## What if the principal is a private person?
 
-No.
-
-This project does not define what agents should do,
-how intelligent they should be,
-or what values they should follow.
-
-It deliberately avoids:
-- ethical prescriptions,
-- behavioral norms,
-- ideological positions.
-
-Identity is treated as infrastructure, not morality.
-
----
-
-## Why not just use existing identifiers or accounts?
-
-Existing identifiers (API keys, accounts, model IDs) are:
-- platform-bound,
-- instance-scoped,
-- vendor-controlled.
-
-They do not persist across systems,
-do not accumulate responsibility,
-and do not represent agents as actors in shared reality.
-
-Persistent agent identity is not a technical convenience.
-It is a prerequisite for responsibility and trust.
-
----
+The record names no one. It carries a keyed commitment that the operator confirms only at the principal's request or by law.
 
 ## Who controls the registry?
 
-No one, at this stage.
+Today, its author, in public: see GOVERNANCE.md. The log and the Bitcoin anchors make every change visible, and anyone can publish a self-declared record without the registry.
 
-aiagentid.org does not operate a live registry,
-issue authoritative IDs,
-or enforce compliance.
+## Does it cost anything?
 
-The project explores whether a minimal, non-captured
-identity layer is possible at all.
+Registration is free.
 
-Control is intentionally undefined.
+## Is this an ethics framework?
 
----
-
-## Is this compatible with decentralization?
-
-Potentially, but not ideologically.
-
-This project does not assume blockchain, DIDs, or any specific stack.
-It also does not reject them.
-
-Decentralization is treated as an implementation question,
-not a premise.
-
----
-
-## Does this create legal personhood for AI?
-
-No.
-
-This project explicitly avoids assigning rights or personhood to agents.
-
-Agents are not persons.
-They are delegated actors whose responsibility ultimately traces back
-to humans or organizations.
-
-Identity does not imply autonomy from accountability.
-
----
-
-## Why start with ontology instead of implementation?
-
-Because implementation without ontological clarity
-produces systems that work technically
-but fail socially, legally, or historically.
-
-Most failures around AI responsibility are not technical failures.
-They are category errors.
-
-This project attempts to address the category error first.
-
----
-
-## What happens if this repository disappears?
-
-Ideally: nothing important.
-
-Success is defined as the concept becoming legible enough
-that others can adopt, adapt, or reimplement it independently.
-
-This is infrastructure thinking:
-the idea matters more than the origin.
-
----
-
-## How can I contribute?
-
-At this stage, contributions are most valuable as:
-- conceptual critique,
-- alternative framings,
-- legal or governance analysis,
-- identification of edge cases.
-
-Code is intentionally out of scope.
-
----
-
-## Why is the scope so narrow?
-
-Because infrastructure fails when it tries to solve everything.
-
-aiagentid.org concerns itself with one question only:
-
-How can artificial agents exist persistently in shared reality
-without erasing responsibility?
-
-Everything else is downstream.
+No. Agent ID says who an agent is and for whom it acts. It does not say what agents should value or how they should behave.

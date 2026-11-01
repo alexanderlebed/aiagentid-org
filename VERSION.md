@@ -1,36 +1,10 @@
-# Agent ID — Version Status
+# Agent ID — Version
 
-Current version: **v0.1**
+Current version: **1.0** (31 October 2026) — <https://aiagentid.org/spec.html>
 
-## Status
+| Version | Date | What it added |
+|---|---|---|
+| 0.1–0.3 | February 2026 | The concept: persistent agent identity, a principal who answers for the agent, a declared scope; unsigned records 1–4 and the first delegation record |
+| **1.0** | 31 October 2026 | Ed25519 signatures over canonical JSON (RFC 8785); an append-only, hash-chained log; status (active, suspended, revoked); private principals behind a commitment; self-declared records on one's own domain; verification in the browser and from the command line; the head of the log anchored in Bitcoin through OpenTimestamps |
 
-This version defines the minimal operational scope of the Agent ID standard.
-
-The following components are considered stable:
-
-- Agent identity concept
-- Human / organization responsibility attribution
-- Registry structure
-- Registry Operator agent role
-- Human-readable and machine-readable agent records
-
-## Non-goals of v0.1
-
-This version does not include:
-
-- automated registration
-- cryptographic signatures
-- enforcement mechanisms
-- governance frameworks
-- behavioral or ethical standards
-
-## Purpose
-
-Version v0.1 exists to:
-- establish ontological clarity,
-- enable discussion and critique,
-- serve as a reference point for future iterations.
-
-## Date
-
-First public version released: **February 2026**
+Drafts 0.1–0.3 stay at their addresses, unchanged: <https://aiagentid.org/about.html#archive>.

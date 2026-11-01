@@ -1,8 +1,8 @@
 <!-- Verify an Agent ID | Check an Agent ID record's signature in your browser or from the command line. -->
 <h1>Verify</h1>
-<p class=lead>Paste an Agent ID, a record URL or a record itself. The check runs in your browser: it fetches the record and the key that signed it, and verifies the Ed25519 signature.</p>
+<p class=lead>Paste an Agent ID — on its own, or the whole <code>Agent-ID:</code> line from an e-mail — a record URL, a domain with a self-declared record, or a record itself. The check runs in your browser: it fetches the record and the key that signed it, and verifies the Ed25519 signature.</p>
 <form id=check class=panel>
-<input type=text name=target_ placeholder="aiid:00000000000005, a URL, or the record JSON" aria-label="Agent ID, URL or record" required>
+<input type=text name=target_ placeholder="aiid:00000000000005, an e-mail header, a URL or a domain" aria-label="Agent ID, URL or record" required>
 <button type=submit>Verify</button>
 <div id=result class=out style="flex-basis:100%"></div>
 </form>
@@ -28,4 +28,4 @@ python3 aiid.py verify-log          # the whole registry: every signature, the w
 
 <h2>Head of the chain</h2>
 <p>The registry log now ends at <code class=wrap>{{head}}</code>. Note it down: if a later copy of the log does not contain it, the past was rewritten.</p>
-<script src="assets/verify.js"></script>
+<script src="assets/verify.js?v=2"></script>

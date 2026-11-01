@@ -29,6 +29,8 @@
     if (!k) throw new Error("no key " + parts[1] + " at " + parts[0]);
     var body = {};
     Object.keys(record).forEach(function (f) { if (f !== "proof") body[f] = record[f]; });
+    if (!(window.crypto && crypto.subtle))
+      throw new Error("this browser cannot check signatures here; use the command line below");
     var pub = await crypto.subtle.importKey("raw", unb64(k.public), { name: "Ed25519" }, false, ["verify"]);
     var ok = await crypto.subtle.verify({ name: "Ed25519" }, pub, unb64(proof.value),
                                         new TextEncoder().encode(canonical(body)));
@@ -37,16 +39,29 @@
   }
   async function load(target) {
     target = target.trim();
-    var m = target.match(/^(?:aiid:)?(\d{14})$/);
-    if (m) return getJSON(new URL("/registry/v1/" + m[1] + ".json", location.origin).href);
     if (/^https?:\/\//.test(target)) return getJSON(target);
-    return JSON.parse(target);
+    if (target.charAt(0) === "{") return JSON.parse(target);
+    // an Agent ID anywhere in the text: a bare number, aiid:…, or a pasted e-mail header
+    var m = target.match(/aiid:(\d{14})/) || target.match(/^(\d{14})$/);
+    if (m) return getJSON(new URL("/registry/v1/" + m[1] + ".json", location.origin).href);
+    // a domain: its self-declared record (standard §9)
+    if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(target))
+      return getJSON("https://" + target + "/.well-known/aiid.json");
+    throw new Error("give an Agent ID, a record URL, a domain or a record itself");
   }
   window.AgentID = { verify: verify, load: load, canonical: canonical };
 
   function say(out, ok, text) {
     out.className = "out " + (ok ? "ok" : "bad");
     out.textContent = (ok ? "✓ " : "✗ ") + text;
+  }
+  // a valid signature on a suspended or revoked agent is still a warning (standard §6)
+  function standing(out, r) {
+    if (r.status === "active") return;
+    out.className = "out warn";
+    out.textContent += " This agent is " + r.status +
+      (r.status_reason ? " (" + r.status_reason + ")" : "") +
+      ": nothing it does now is within its declared scope.";
   }
   document.querySelectorAll(".verify[data-record]").forEach(function (box) {
     var out = box.querySelector(".out");
@@ -55,6 +70,7 @@
       try {
         var r = await verify(await getJSON(box.getAttribute("data-record")));
         say(out, true, "Signed by the registry key. Status: " + r.status + ", version " + r.version + ".");
+        standing(out, r);
       } catch (e) { say(out, false, e.message); }
     });
   });
@@ -69,6 +85,7 @@
       say(out, true, r.aiid + " · " + r.name + " · " + r.status + " — acts for " +
           (p.disclosed === false ? "a private " + (p.type === "organization" ? "organization" : "person") + " (not disclosed)" : (p.name || "?")) +
           ". Scope: " + ((r.scope || {}).summary || "") + " Signed by " + r.proof.key);
+      standing(out, r);
     } catch (e) { say(out, false, e.message); }
   });
 })();

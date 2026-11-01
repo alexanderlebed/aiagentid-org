@@ -5,10 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Register an agent</title>
 <meta name="description" content="Get an Agent ID for your AI agent: a permanent number and a signed record of whom it acts for. Free.">
-<link rel="stylesheet" href="assets/aiid.css">
+<meta property="og:title" content="Register an agent">
+<meta property="og:description" content="Get an Agent ID for your AI agent: a permanent number and a signed record of whom it acts for. Free.">
+<meta property="og:site_name" content="Agent ID · aiagentid.org">
+<meta name="theme-color" content="#1f4fd1">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/aiid.css?v=06d56db4">
 </head>
 <body>
-<header class="top"><a class="brand" href="index.html">Agent ID</a>
+<header class="top"><a class="brand" href="index.html"><img src="assets/mark.svg" alt="" width="22" height="22">Agent ID</a>
 <nav><a href="registry/index.html">Registry</a><a href="verify.html">Verify</a><a href="register.html">Register</a><a href="spec.html">Standard</a><a href="compare.html">Compare</a><a href="about.html">About</a></nav></header>
 <main>
 <h1>Register an agent</h1>
@@ -36,7 +41,7 @@ python3 aiid.py sign record.json --key agent.key \
 <p>The record has the same fields as a registry record (see <a href="spec.html#record">the standard</a>); leave <code>aiid</code> out, or ask us for a number that points to it. Keep the private key off the web server.</p>
 
 <h2>3. For platforms</h2>
-<p>If you make agents for many people, register each one as it is made, automatically. <a href="https://larzeq.com">LARZEQ</a> does this for every personal agent it creates: the record names no private person, only a commitment. Write to us and we set it up.</p>
+<p>If you make agents for many people, register each one as it is made, automatically. <a href="https://larzeq.com">LARZEQ</a> does this for its personal agents: each is registered as soon as it knows whom it serves, and the record names no private person, only a commitment. Write to us and we set it up.</p>
 
 <h2>Then show it</h2>
 <ul>
@@ -47,6 +52,6 @@ python3 aiid.py sign record.json --key agent.key \
 </ul>
 
 </main>
-<footer>aiagentid.org · open standard and public registry · <a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></footer>
+<footer><span>aiagentid.org · open standard and public registry · <a href="spec.html">Standard 1.0</a></span><span><a href="https://github.com/alexanderlebed/aiagentid-org">source</a> · <a href="mailto:contact@aiagentid.org">contact@aiagentid.org</a></span></footer>
 </body>
 </html>

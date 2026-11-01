@@ -1,71 +1,22 @@
 # Governance
 
-aiagentid.org is a conceptual infrastructure project.
+## Today
 
-It is not owned by any corporation, platform, or vendor.
-It is not a product roadmap.
-It is not a monetized service.
+- **Standard:** Agent ID 1.0, maintained by its author, Alexander Lebed. Changes are published as new versions; a published version is never edited.
+- **Registry:** aiagentid.org, operated from this public repository. Its signing key is listed at `/.well-known/aiid-registry.json`; keys are added, never removed.
+- **Operator of the first agents:** LARZEQ, the author's company, registers its own agents through the same public process and the same rules as anyone else.
 
-This repository exists to explore, define, and stabilize
-the concept of persistent identity and responsibility
-for artificial agents.
+## What keeps the registry honest
 
-## Current Status
-
-- Stage: Conceptual / Pre-standard
-- No formal implementation is mandated
-- No exclusive control over usage or adoption
-
-## Stewardship
-
-The project is currently stewarded by its initiator:
-
-Alexander Lebed
-
-Stewardship at this stage means:
-- maintaining conceptual coherence,
-- curating discussions,
-- preventing premature capture by commercial or ideological interests.
-
-It does not imply ownership over future implementations.
+- Every record and every change is in an append-only, hash-chained log; anyone can replay it (`tools/aiid.py verify-log`).
+- The head of the log is anchored in Bitcoin, so the registry cannot rewrite its own past.
+- A number is never reused or reassigned. A record can be suspended or revoked, never erased.
+- Anyone can publish a self-declared record on their own domain without asking the registry.
 
 ## Contributions
 
-Contributions are welcome in the form of:
-- conceptual critique,
-- alternative framings,
-- edge-case analysis,
-- governance and legal perspectives.
+Criticism, implementations and proposals are welcome as issues or pull requests. Registration requests: `register.html`.
 
-Code contributions are explicitly out of scope at this stage.
+## Later
 
-## Decision-Making
-
-There is no voting mechanism at this stage.
-
-Decisions about scope and direction are made conservatively,
-with priority given to:
-- ontological clarity,
-- minimalism,
-- interoperability,
-- long-term responsibility.
-
-## Future Governance
-
-If and when the concept matures toward a formal standard,
-governance may transition to:
-- a working group,
-- an academic consortium,
-- or a neutral foundation.
-
-No such transition is assumed or promised.
-
-## Non-Goals
-
-This project explicitly avoids:
-- defining agent behavior,
-- enforcing ethical frameworks,
-- prescribing intelligence architectures,
-- becoming a proprietary standard.
-
-Its sole concern is identity as infrastructure.
+If other parties adopt the format, the standard and the registry key are meant to pass to a neutral body: a working group or a foundation. Until then, the author is responsible for both, publicly.
