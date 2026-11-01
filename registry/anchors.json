@@ -9,5 +9,15 @@
     "stamped_at": "2026-10-31T13:58:31Z",
     "status": "bitcoin",
     "block": 973985
+  },
+  {
+    "entries": 9,
+    "head": "sha256:067fd66b3a662c519ef7260f28f485f7b23f64b3ffdea8964f7119ed5da2840a",
+    "text": "anchors/000009.txt",
+    "proof": "anchors/000009.txt.ots",
+    "network": "Bitcoin",
+    "via": "OpenTimestamps",
+    "stamped_at": "2026-11-01T10:50:42Z",
+    "status": "pending"
   }
 ]
