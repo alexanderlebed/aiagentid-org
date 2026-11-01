@@ -2,8 +2,8 @@
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
   "count": 9,
-  "entries": 9,
-  "head": "sha256:067fd66b3a662c519ef7260f28f485f7b23f64b3ffdea8964f7119ed5da2840a",
+  "entries": 10,
+  "head": "sha256:08a8f27390d2cbe0a7ec611fca1da886ba1d4b5fe01867e5eca2359ec1132b75",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -72,7 +72,7 @@
     },
     {
       "aiid": "aiid:00000000000009",
-      "name": "PI",
+      "name": "Билли",
       "kind": "personal intelligence (PI)",
       "status": "active",
       "registered_at": "2026-11-01T10:50:37Z",
