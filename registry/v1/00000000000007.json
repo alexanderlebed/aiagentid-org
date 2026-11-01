@@ -1,0 +1,47 @@
+{
+  "aiid": "aiid:00000000000007",
+  "contact": "contact@larzeq.com",
+  "kind": "personal intelligence (PI)",
+  "name": "PI",
+  "operator": {
+    "name": "LARZEQ",
+    "type": "organization",
+    "url": "https://larzeq.com"
+  },
+  "prev": "sha256:e799b0caef2326999d9ad4aec43aabc50e0628f262e62c9476ff946bb0040422",
+  "principal": {
+    "name": "Alexander Lebed",
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "mdO_2Qx7bHpGYNXtv1ySpNh3yO4IRBAZbWEZxG2gmj3HkmrYMJ-g0dZJFdLzS-QydAxbZJuzrP_7_XOHOvdrDw"
+  },
+  "registered_at": "2026-11-01T10:50:37Z",
+  "scope": {
+    "conditions": [
+      "works for one principal only",
+      "every action is recorded in a journal her principal can check",
+      "her principal takes all her data with one command"
+    ],
+    "may": [
+      "write and answer mail from her own address",
+      "read the documents her principal sends and answer them",
+      "use websites on her principal's behalf",
+      "keep errands, reminders and notes",
+      "place phone calls in her principal's name, each after his yes"
+    ],
+    "may_not": [
+      "send anything outward without her principal's yes",
+      "press the final button of a purchase or a payment",
+      "act for anyone but her principal"
+    ],
+    "summary": "A personal agent working for one person: mail, documents, websites, errands."
+  },
+  "seq": 7,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-11-01T10:50:37Z",
+  "version": 1
+}

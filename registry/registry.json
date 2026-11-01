@@ -1,9 +1,9 @@
 {
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
-  "count": 6,
-  "entries": 6,
-  "head": "sha256:e799b0caef2326999d9ad4aec43aabc50e0628f262e62c9476ff946bb0040422",
+  "count": 9,
+  "entries": 9,
+  "head": "sha256:067fd66b3a662c519ef7260f28f485f7b23f64b3ffdea8964f7119ed5da2840a",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -53,6 +53,30 @@
       "status": "active",
       "registered_at": "2026-10-31T13:52:19Z",
       "url": "https://aiagentid.org/registry/v1/00000000000006.json"
+    },
+    {
+      "aiid": "aiid:00000000000007",
+      "name": "PI",
+      "kind": "personal intelligence (PI)",
+      "status": "active",
+      "registered_at": "2026-11-01T10:50:37Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000007.json"
+    },
+    {
+      "aiid": "aiid:00000000000008",
+      "name": "Swan",
+      "kind": "personal intelligence (PI)",
+      "status": "active",
+      "registered_at": "2026-11-01T10:50:37Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000008.json"
+    },
+    {
+      "aiid": "aiid:00000000000009",
+      "name": "PI",
+      "kind": "personal intelligence (PI)",
+      "status": "active",
+      "registered_at": "2026-11-01T10:50:37Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000009.json"
     }
   ]
 }
