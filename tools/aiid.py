@@ -254,6 +254,28 @@ def set_status(reg: Registry, aiid: str, status: str, reason: str, key) -> dict:
     return reg.append(record, key)
 
 
+#: What a new version may change; the number, the status and the registration date stay.
+MUTABLE = ("name", "kind", "principal", "operator", "scope", "contact")
+
+
+def update(reg: Registry, aiid: str, changes: dict, key) -> dict | None:
+    """A new version with the given fields changed (standard §3: version +1 with every
+    change). None when nothing differs, so a repeated update adds nothing to the log."""
+    old = reg.current().get(aiid)
+    if old is None:
+        raise SystemExit(f"{aiid} is not in the registry")
+    if old["status"] == "revoked":
+        raise SystemExit(f"{aiid} is revoked; a revoked identity stays revoked")
+    unknown = set(changes) - set(MUTABLE)
+    if unknown:
+        raise SystemExit(f"an update may change only {', '.join(MUTABLE)}; not {', '.join(sorted(unknown))}")
+    new = {**unsigned(old), **changes}
+    if all(new.get(f) == old.get(f) for f in MUTABLE):
+        return None
+    new.update(version=old["version"] + 1, updated_at=now())
+    return reg.append(new, key)
+
+
 def verify_log(entries: list[dict], keys: dict) -> list[str]:
     problems, prev = [], None
     for i, e in enumerate(entries, 1):
@@ -450,13 +472,15 @@ def main(argv=None) -> int:
     kg.add_argument("out")
     sg = sub.add_parser("sign", help="sign a self-declared record")
     sg.add_argument("record"), sg.add_argument("--key", required=True), sg.add_argument("--key-id", required=True)
-    for name in ("issue", "status", "build", "anchor"):
+    for name in ("issue", "update", "status", "build", "anchor"):
         p = sub.add_parser(name)
         p.add_argument("--root", default=".")
         if name not in ("build", "anchor"):
             p.add_argument("--key", required=True)
         if name == "issue":
             p.add_argument("spec", help="a JSON file, or - for stdin")
+        if name == "update":
+            p.add_argument("aiid"), p.add_argument("changes", help="a JSON file, or - for stdin")
         if name == "status":
             p.add_argument("aiid"), p.add_argument("status"), p.add_argument("reason")
     a = ap.parse_args(argv)
@@ -502,6 +526,12 @@ def main(argv=None) -> int:
         r = issue(reg, spec, private_key(a.key))
         build(reg)
         print(r["aiid"])
+        return 0
+    if a.cmd == "update":
+        changes = json.load(sys.stdin if a.changes == "-" else open(a.changes))
+        r = update(reg, a.aiid, changes, private_key(a.key))
+        build(reg)
+        print(a.aiid, f"version {r['version']}" if r else "unchanged")
         return 0
     if a.cmd == "status":
         r = set_status(reg, a.aiid, a.status, a.reason, private_key(a.key))
