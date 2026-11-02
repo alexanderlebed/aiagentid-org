@@ -8,7 +8,7 @@
     "type": "organization",
     "url": "https://larzeq.com"
   },
-  "prev": "sha256:08a8f27390d2cbe0a7ec611fca1da886ba1d4b5fe01867e5eca2359ec1132b75",
+  "prev": "sha256:7192b5b78ff7520c4a811e479a2f1f7a12e013efdb02172c5c3341740c48cb40",
   "principal": {
     "commitment": "hmac-sha256:4713a8b0334823351ead1fed2a4edc9bee2a09ce8631e92019b35cd90cc082b5",
     "disclosed": false,
@@ -17,7 +17,7 @@
   "proof": {
     "alg": "Ed25519",
     "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
-    "value": "5bzz4rUFKunUsNU03HmE5_0G7DZkfBnnV7oLYoFzR4pfY88Z6whxQIQAf0pPD3l5sXvlxD1WE9LZwZAGnM2uBQ"
+    "value": "vE3nd2TVqf27fN9k3LZn90O_vpV5k7OOmW1SnRguLG1wbXEcdaLymomD0JZoBz5L5jt4or8oesE0HHVR51vCDg"
   },
   "registered_at": "2026-11-02T10:10:42Z",
   "scope": {
@@ -30,7 +30,8 @@
       "write and answer mail from her own address",
       "read the documents her principal sends and answer them",
       "use websites on her principal's behalf",
-      "keep errands, reminders and notes"
+      "keep errands, reminders and notes",
+      "place phone calls in her principal's name, each after his yes"
     ],
     "may_not": [
       "send anything outward without her principal's yes",
@@ -39,9 +40,9 @@
     ],
     "summary": "A personal agent working for one person: mail, documents, websites, errands."
   },
-  "seq": 11,
+  "seq": 12,
   "standard": "aiid/1.0",
   "status": "active",
-  "updated_at": "2026-11-02T10:10:42Z",
-  "version": 1
+  "updated_at": "2026-11-02T11:40:46Z",
+  "version": 2
 }
