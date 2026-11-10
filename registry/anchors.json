@@ -196,5 +196,15 @@
     "stamped_at": "2026-11-10T12:10:48Z",
     "status": "bitcoin",
     "block": 975308
+  },
+  {
+    "entries": 27,
+    "head": "sha256:ace50c475e1ef151397fc9b529f0ca527b207df36f1859733c1d6732325bf07b",
+    "text": "anchors/000027.txt",
+    "proof": "anchors/000027.txt.ots",
+    "network": "Bitcoin",
+    "via": "OpenTimestamps",
+    "stamped_at": "2026-11-10T15:40:49Z",
+    "status": "pending"
   }
 ]
