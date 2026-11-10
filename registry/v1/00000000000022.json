@@ -2,13 +2,13 @@
   "aiid": "aiid:00000000000022",
   "contact": "contact@larzeq.com",
   "kind": "personal intelligence (PI)",
-  "name": "PI",
+  "name": "Nova",
   "operator": {
     "name": "LARZEQ",
     "type": "organization",
     "url": "https://larzeq.com"
   },
-  "prev": "sha256:e10d9b7fb58ac358875ef3829dd4f5ce00cb6dda7d6113414c3f6041c9ee44aa",
+  "prev": "sha256:0731e3f53ccb63d25a59e73d90baa7dbc17bceda743ebb04970d64997488b806",
   "principal": {
     "commitment": "hmac-sha256:afa8ccd2d7c970d76f1110df9e6bcdd7b2425abefc4cc869c94dc9af74fb871f",
     "disclosed": false,
@@ -17,7 +17,7 @@
   "proof": {
     "alg": "Ed25519",
     "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
-    "value": "HAGl0IXMS3UxkUrSsLLBDOe6ywhJNBAwhJezZQzb2cN2nOdAhwxoLlIq4qaAXeaqkoegKi5lr0Dx7YO1NIVDCA"
+    "value": "mzk0jdALx0GERkwsKnh6KkMjZZaNEBOrtLU0eR_ntez4Lnthj5XaUTDKhvgNbZam6sC2Ruy66GPDVSffWlL3AQ"
   },
   "registered_at": "2026-11-10T12:00:38Z",
   "scope": {
@@ -40,9 +40,9 @@
     ],
     "summary": "A personal agent working for one person: mail, documents, websites, errands."
   },
-  "seq": 25,
+  "seq": 26,
   "standard": "aiid/1.0",
   "status": "active",
-  "updated_at": "2026-11-10T12:00:38Z",
-  "version": 1
+  "updated_at": "2026-11-10T12:10:42Z",
+  "version": 2
 }

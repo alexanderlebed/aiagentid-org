@@ -2,8 +2,8 @@
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
   "count": 22,
-  "entries": 25,
-  "head": "sha256:0731e3f53ccb63d25a59e73d90baa7dbc17bceda743ebb04970d64997488b806",
+  "entries": 26,
+  "head": "sha256:49dad4cd8a7f4c2152bd1b1fb40b0693b7f0aef0f28cc5392a8a13a409906c17",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -176,7 +176,7 @@
     },
     {
       "aiid": "aiid:00000000000022",
-      "name": "PI",
+      "name": "Nova",
       "kind": "personal intelligence (PI)",
       "status": "active",
       "registered_at": "2026-11-10T12:00:38Z",
