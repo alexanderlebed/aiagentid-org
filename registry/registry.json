@@ -2,8 +2,8 @@
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
   "count": 24,
-  "entries": 28,
-  "head": "sha256:0712cb0e8e9785cba5edae83eaf799dcbaca0aed4f4b580a255a59d67dfbee6d",
+  "entries": 29,
+  "head": "sha256:a284fb4206175a7a84831fc56b98ae9ffdffc66f174b58c87bb6815b966439f5",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -192,7 +192,7 @@
     },
     {
       "aiid": "aiid:00000000000024",
-      "name": "PI",
+      "name": "Crea",
       "kind": "personal intelligence (PI)",
       "status": "active",
       "registered_at": "2026-11-11T13:50:37Z",
