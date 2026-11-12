@@ -2,13 +2,13 @@
   "aiid": "aiid:00000000000025",
   "contact": "contact@larzeq.com",
   "kind": "personal intelligence (PI)",
-  "name": "PI",
+  "name": "Ваня",
   "operator": {
     "name": "LARZEQ",
     "type": "organization",
     "url": "https://larzeq.com"
   },
-  "prev": "sha256:f28a98b0c7a28351ec555945431c52dbfc7c53ae0615a6ca2ddf7abc6ef5a457",
+  "prev": "sha256:7fe91d088a7758d536fc8edc32370c2df04b0e204ba0cdae2062c12d0cf15ed0",
   "principal": {
     "commitment": "hmac-sha256:41ae10748c0eead63dbc03db83c572ba05653085c5b3c644d5174938e02f5d92",
     "disclosed": false,
@@ -17,7 +17,7 @@
   "proof": {
     "alg": "Ed25519",
     "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
-    "value": "_mQuPMTARWpqUrhOrqdqE4sdmjPGnEFFE2AYIkT88dSnSZU156X7zlx5Z-YTcwkkhvnSIjrbJcw3lTu4hDBjAg"
+    "value": "b9DUFdMpaLUbjFlcZ_xgmcIfKTY7AWBRfaKkoTtvgrxT-Mq0_ZIVVOeb2k19AuYUppROFry67iznKqf12eEOAw"
   },
   "registered_at": "2026-11-12T17:10:40Z",
   "scope": {
@@ -39,9 +39,9 @@
     ],
     "summary": "A personal agent working for one person: mail, documents, websites, errands."
   },
-  "seq": 33,
+  "seq": 34,
   "standard": "aiid/1.0",
   "status": "active",
-  "updated_at": "2026-11-12T17:10:40Z",
-  "version": 1
+  "updated_at": "2026-11-12T17:20:45Z",
+  "version": 2
 }

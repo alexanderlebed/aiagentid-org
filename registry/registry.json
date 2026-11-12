@@ -2,8 +2,8 @@
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
   "count": 25,
-  "entries": 33,
-  "head": "sha256:7fe91d088a7758d536fc8edc32370c2df04b0e204ba0cdae2062c12d0cf15ed0",
+  "entries": 34,
+  "head": "sha256:0289406cfed6c78576f100c7847f10d02a9abb061b8e1863fbfabdd64b4e051a",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -200,7 +200,7 @@
     },
     {
       "aiid": "aiid:00000000000025",
-      "name": "PI",
+      "name": "Ваня",
       "kind": "personal intelligence (PI)",
       "status": "active",
       "registered_at": "2026-11-12T17:10:40Z",
