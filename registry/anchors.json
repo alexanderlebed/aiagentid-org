@@ -260,7 +260,8 @@
     "network": "Bitcoin",
     "via": "OpenTimestamps",
     "stamped_at": "2026-11-12T17:10:46Z",
-    "status": "pending"
+    "status": "bitcoin",
+    "block": 975582
   },
   {
     "entries": 34,
@@ -270,6 +271,7 @@
     "network": "Bitcoin",
     "via": "OpenTimestamps",
     "stamped_at": "2026-11-12T17:20:53Z",
-    "status": "pending"
+    "status": "bitcoin",
+    "block": 975582
   }
 ]
