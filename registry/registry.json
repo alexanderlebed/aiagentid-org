@@ -2,8 +2,8 @@
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
   "count": 28,
-  "entries": 38,
-  "head": "sha256:a783cc6a9a7f928faee81439dd1a64d486679f7e9344503a4d8e18df56e30c15",
+  "entries": 40,
+  "head": "sha256:cd8a0b7335f84ca11cbf1951012df3fddd432164db3753852e31d72b773349df",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
