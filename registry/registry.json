@@ -1,9 +1,9 @@
 {
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
-  "count": 28,
-  "entries": 40,
-  "head": "sha256:cd8a0b7335f84ca11cbf1951012df3fddd432164db3753852e31d72b773349df",
+  "count": 29,
+  "entries": 41,
+  "head": "sha256:f33916e7a65f108550d1bec89f8c32084d28bff062a90065695cc84564902534",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -229,6 +229,14 @@
       "status": "revoked",
       "registered_at": "2026-11-16T21:00:38Z",
       "url": "https://aiagentid.org/registry/v1/00000000000028.json"
+    },
+    {
+      "aiid": "aiid:00000000000029",
+      "name": "PI",
+      "kind": "personal intelligence (PI)",
+      "status": "active",
+      "registered_at": "2026-11-17T10:00:45Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000029.json"
     }
   ]
 }
