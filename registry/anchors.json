@@ -348,7 +348,8 @@
     "network": "Bitcoin",
     "via": "OpenTimestamps",
     "stamped_at": "2026-11-17T13:30:49Z",
-    "status": "pending"
+    "status": "bitcoin",
+    "block": 976281
   },
   {
     "entries": 43,
