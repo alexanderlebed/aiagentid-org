@@ -327,5 +327,15 @@
     "via": "OpenTimestamps",
     "stamped_at": "2026-11-17T08:10:44Z",
     "status": "pending"
+  },
+  {
+    "entries": 41,
+    "head": "sha256:f33916e7a65f108550d1bec89f8c32084d28bff062a90065695cc84564902534",
+    "text": "anchors/000041.txt",
+    "proof": "anchors/000041.txt.ots",
+    "network": "Bitcoin",
+    "via": "OpenTimestamps",
+    "stamped_at": "2026-11-17T10:00:51Z",
+    "status": "pending"
   }
 ]
