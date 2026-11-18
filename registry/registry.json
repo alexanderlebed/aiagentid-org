@@ -1,9 +1,9 @@
 {
   "standard": "aiid/1.0",
   "registry": "https://aiagentid.org",
-  "count": 33,
-  "entries": 45,
-  "head": "sha256:28ac1b6f36b22e6b896c4c4f2c480296b0c1af38a506a9f2ae2ea847fc3b2440",
+  "count": 34,
+  "entries": 46,
+  "head": "sha256:5406c7d1ab24465364aeea5d1a0bdd9310293e1af5361aeb122edcdc323b50c1",
   "keys": "https://aiagentid.org/.well-known/aiid-registry.json",
   "records": [
     {
@@ -269,6 +269,14 @@
       "status": "active",
       "registered_at": "2026-11-17T16:50:41Z",
       "url": "https://aiagentid.org/registry/v1/00000000000033.json"
+    },
+    {
+      "aiid": "aiid:00000000000034",
+      "name": "Женя",
+      "kind": "personal intelligence (PI)",
+      "status": "active",
+      "registered_at": "2026-11-18T14:40:46Z",
+      "url": "https://aiagentid.org/registry/v1/00000000000034.json"
     }
   ]
 }
