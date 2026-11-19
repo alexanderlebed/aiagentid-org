@@ -1,0 +1,1 @@
+aiagentid.org registry head (47 entries): sha256:bcdbe0d852295c1dc92ff2c6ddbeafb9f3967af52cb176f95ffa941ab83e4b4c
