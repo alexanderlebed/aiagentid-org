@@ -1,0 +1,47 @@
+{
+  "aiid": "aiid:00000000000037",
+  "contact": "contact@larzeq.com",
+  "kind": "personal intelligence (PI)",
+  "name": "PI",
+  "operator": {
+    "name": "LARZEQ",
+    "type": "organization",
+    "url": "https://larzeq.com"
+  },
+  "prev": "sha256:0850921f039ecf43122ee2980457698e1f2b7c1a213b9f7350c2a148a6d188d2",
+  "principal": {
+    "commitment": "hmac-sha256:9162f552d50bdd3cdff45a9b21e55d86bfbf3b5fd129e3cefe8a6de20e90ac9a",
+    "disclosed": false,
+    "type": "human"
+  },
+  "proof": {
+    "alg": "Ed25519",
+    "key": "https://aiagentid.org/.well-known/aiid-registry.json#2026-1",
+    "value": "UWVc7SZlJ9QQ_e1E3ZxBnxrFEypxJ01QQP5zEMsNVjKy6cVbkhBuVC7cNvvbs5CLcKJiUICLCZGxwLpcxyjmCQ"
+  },
+  "registered_at": "2026-11-24T09:30:42Z",
+  "scope": {
+    "conditions": [
+      "works for one principal only",
+      "every action is recorded in a journal her principal can check",
+      "her principal takes all her data with one command"
+    ],
+    "may": [
+      "write and answer mail from her own address",
+      "read the documents her principal sends and answer them",
+      "use websites on her principal's behalf",
+      "keep errands, reminders and notes"
+    ],
+    "may_not": [
+      "send anything outward without her principal's yes",
+      "press the final button of a purchase or a payment",
+      "act for anyone but her principal"
+    ],
+    "summary": "A personal agent working for one person: mail, documents, websites, errands."
+  },
+  "seq": 49,
+  "standard": "aiid/1.0",
+  "status": "active",
+  "updated_at": "2026-11-24T09:30:42Z",
+  "version": 1
+}
